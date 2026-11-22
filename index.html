@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐣 雜誌11月號 U4 A Closer Look at South Korea's Surprising Customs 韓國生活冷知識大公開</title>
+<style>
+:root{
+  --mBlue:#E2F1FF; --mPurple:#F3E8FF; --mPink:#FCE7F3; --mYellow:#FFFBEB;
+  --mGreen:#ECFDF5; --coffee:#4A3E3D; --coffeeLt:#6B5A59; --bg:#FFFDF9;
+  --ok:#3F9D6B; --no:#C2557A;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--coffee);
+ font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+ line-height:1.75;font-size:16px}
+#fw{position:fixed;inset:0;pointer-events:none;z-index:50}
+header{position:sticky;top:0;z-index:40;background:var(--mBlue);
+ border-bottom:2px solid #cfe4f7;display:flex;align-items:center;
+ justify-content:space-between;gap:10px;padding:8px 14px}
+header h1{font-size:1.0rem;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btn{cursor:pointer;border:2px solid #d9c9e8;background:var(--mPurple);color:var(--coffee);
+ border-radius:14px;padding:7px 14px;font-size:.95rem;font-family:inherit;transition:.18s}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(1px)}
+.btn:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #9b7bc4;outline-offset:2px}
+#menu{position:absolute;right:10px;top:52px;z-index:41;background:#fff;border:2px solid #e4d6f2;
+ border-radius:18px;padding:10px;box-shadow:0 10px 28px rgba(74,62,61,.18);display:none;min-width:250px}
+#menu.open{display:block}
+#menu .btn{display:block;width:100%;text-align:left;margin:6px 0}
+main{max-width:960px;margin:0 auto;padding:16px 14px 80px}
+section{display:none}
+section.active{display:block}
+h2{font-size:1.25rem;border-left:8px solid #d9c9e8;padding-left:10px;margin:26px 0 12px}
+h3{font-size:1.05rem;margin:20px 0 8px;color:#5c4a63}
+.card{background:#fff;border:2px solid #f0e6f7;border-radius:18px;padding:14px;margin:12px 0}
+.q{background:var(--mYellow);border:2px solid #f3e6c5;border-radius:16px;padding:13px;margin:14px 0}
+.q p.stem{font-weight:700;margin:.2em 0 .6em}
+.opt{display:block;width:100%;text-align:left;background:#fff;border:2px solid #e9dcf5;
+ border-radius:12px;padding:8px 12px;margin:5px 0;cursor:pointer;font-family:inherit;font-size:.97rem;transition:.15s}
+.opt:hover{transform:translateY(-2px);background:var(--mPurple)}
+.opt.right{background:var(--mGreen);border-color:#9ed9b8}
+.opt.wrong{background:var(--mPink);border-color:#e39ab9}
+.sol{display:none;margin-top:10px;background:var(--mGreen);border:2px dashed #a9dcc1;
+ border-radius:14px;padding:12px;animation:open .45s ease}
+.sol.show{display:block}
+@keyframes open{from{opacity:0;transform:rotateX(-70deg);transform-origin:top}to{opacity:1;transform:rotateX(0)}}
+.sol b{color:#2f7a53}
+.blank{display:inline-block;min-width:110px;border:none;border-bottom:2px solid #8fbfe8;
+ background:var(--mBlue);border-radius:6px 6px 0 0;padding:2px 6px;font-family:inherit;font-size:.95rem;color:var(--coffee)}
+.blank.right{background:var(--mGreen);border-bottom-color:#4aa578}
+.blank.wrong{background:var(--mPink);border-bottom-color:#d4779f}
+select.dd{background:var(--mPurple);border:2px solid #d9c9e8;border-radius:10px;padding:3px 6px;font-family:inherit;font-size:.95rem;color:var(--coffee)}
+.num{color:#8a6fae;font-weight:700;font-size:.85rem;vertical-align:super}
+mark{background:#FFF3B0;padding:0 2px;border-radius:4px}
+.kw{color:#7a4fa8;font-weight:700}
+.spk{cursor:pointer;border:none;background:transparent;font-size:1rem;padding:0 3px}
+#score{display:none;position:sticky;top:50px;z-index:30;background:var(--mGreen);
+ border:2px solid #a9dcc1;border-radius:14px;padding:8px 12px;margin:8px 0;font-weight:700}
+#score.show{display:block}
+.pop{display:inline-block;animation:pop .5s}
+@keyframes pop{0%{transform:scale(1)}45%{transform:scale(1.6)}100%{transform:scale(1)}}
+#toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--coffee);
+ color:#fff;border-radius:16px;padding:10px 18px;z-index:60;display:none;max-width:90%}
+.tabsel{background:var(--mPink);border-color:#f0b9d3}
+.wbwrap{position:sticky;top:52px;z-index:20;background:var(--mYellow);border:2px solid #f3e6c5;border-radius:16px;margin:10px 0}
+.wbhead{cursor:pointer;padding:8px 12px;font-weight:700;display:flex;justify-content:space-between}
+.wbbody{max-height:170px;overflow-y:auto;padding:8px 12px;display:flex;flex-wrap:wrap;gap:6px}
+.wbbody.hide{display:none}
+.chip{cursor:pointer;background:#fff;border:2px solid #e9dcf5;border-radius:12px;padding:4px 10px;font-size:.93rem;transition:.15s}
+.chip:hover{transform:translateY(-2px)}
+.chip.sel{background:var(--mPink);border-color:#f0b9d3}
+.chip.used{opacity:.35;pointer-events:none}
+.slot{display:inline-block;min-width:130px;border-bottom:2px solid #8fbfe8;background:var(--mBlue);
+ border-radius:6px 6px 0 0;padding:2px 8px;cursor:pointer;min-height:1.7em}
+.slot.right{background:var(--mGreen);border-bottom-color:#4aa578}
+.slot.wrong{background:var(--mPink);border-bottom-color:#d4779f}
+.zh{color:#2f7a53;font-size:.9rem}
+.seq{display:flex;flex-direction:column;gap:6px;margin:8px 0}
+.seqitem{cursor:pointer;background:#fff;border:2px solid #e9dcf5;border-radius:12px;padding:8px 12px;transition:.15s}
+.seqitem:hover{transform:translateY(-2px)}
+.seqitem.picked{background:var(--mPurple);border-color:#c9aee4}
+.board{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:10px 0}
+.sq{border:2px solid #e9dcf5;border-radius:12px;padding:8px 4px;text-align:center;font-size:.8rem;background:#fff}
+.sq.here{background:var(--mPink);border-color:#f0b9d3;font-weight:700}
+.sq.done{background:var(--mGreen);border-color:#9ed9b8}
+textarea{width:100%;font-family:inherit;font-size:.97rem;border:2px solid #cfe4f7;border-radius:12px;padding:8px;background:var(--mBlue);color:var(--coffee)}
+table{border-collapse:collapse;width:100%;font-size:.9rem;margin:8px 0}
+th,td{border:1px solid #e4d6f2;padding:6px 8px;text-align:left}
+th{background:var(--mPurple)}
+@media(max-width:600px){body{font-size:15px}main{padding:12px 10px 70px}
+ h2{font-size:1.1rem}.board{grid-template-columns:repeat(4,1fr)}.wbbody{max-height:130px}
+ header h1{font-size:.8rem}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<canvas id="fw"></canvas>
+<header>
+  <h1>🐣 雜誌11月號 U4　A Closer Look at South Korea's Surprising Customs 韓國生活冷知識大公開</h1>
+  <button class="btn" id="menuBtn" onclick="toggleMenu()">☰ 選單</button>
+</header>
+<div id="menu">
+  <button class="btn" onclick="go('practice')">💡 字彙對對碰</button>
+  <button class="btn" onclick="go('cloze')">📝 克漏字與填空</button>
+  <button class="btn" onclick="go('review')">📚 Reading 架構總複習</button>
+  <button class="btn" onclick="go('board')">🎲 摘要大富翁</button>
+  <button class="btn" onclick="go('gias')">✍️ GIAS 綜合練習與 RCQ</button>
+  <button class="btn" onclick="go('life')">🥢 生活應用 Korea Lab</button>
+  <button class="btn" onclick="go('focus')">📐 Language in Focus</button>
+  <button class="btn" onclick="go('analysis')">🧭 文體與組織分析</button>
+  <hr>
+  <button class="btn" onclick="toggleScore()">🏆 顯示／隱藏計分列</button>
+  <button class="btn" onclick="wipe()">🧹 清除紀錄，重新開始</button>
+</div>
+<main>
+<div id="score">🏆 Kahoot 積分：<span id="pts" class="pop">0</span> 分　|　🔥 連對：<span id="streak">0</span>　|　✅ 答對 <span id="nok">0</span> / 作答 <span id="ntot">0</span></div>
+
+<!-- ============ TAB 1 ============ -->
+<section id="practice" class="active">
+  <h2>💡 字彙對對碰</h2>
+  <div id="catbar" style="display:flex;flex-wrap:wrap;gap:6px"></div>
+  <div class="wbwrap">
+    <div class="wbhead" onclick="document.getElementById('wbbody').classList.toggle('hide')">
+      <span>🗃 Word Bank（點選詞彙 → 再點空格填入；再點空格可退回）</span><span>▲▼</span>
+    </div>
+    <div class="wbbody" id="wbbody"></div>
+  </div>
+  <div id="qlist"></div>
+  <button class="btn" onclick="checkPractice()">✓ Check answers</button>
+</section>
+
+<!-- ============ TAB 2 ============ -->
+<section id="cloze">
+  <h2>📝 克漏字與填空</h2>
+  <p class="zh">每題 4 分，滿分 100 分，忽略大小寫。</p>
+  <div class="card" id="clozeText"></div>
+  <button class="btn" onclick="checkCloze()">✓ Check answers</button>
+  <button class="btn" onclick="toggleSol('clozeSol')">📖 參考解答：</button>
+  <div class="sol" id="clozeSol">
+    <h3>參考解答的句子（完整課文，答案以粗體標示）</h3>
+    <p>South Korea is internationally known for K-pop, dramas, and busy <b>urban</b> life（繁忙的都市生活）. <b>Yet</b>（然而；但是）there is another side that most people never see—one <b>full of</b> interesting traditions hidden in everyday moments（充滿了融入日常生活的有趣傳統）. <button class="spk" onclick="readSlow('South Korea is internationally known for K-pop, dramas, and busy urban life. Yet there is another side that most people never see, one full of interesting traditions hidden in everyday moments.')">🔊</button></p>
+    <p>Many South Korean families have a special refrigerator just for kimchi. Because kimchi continues to ferment <b>over time</b>（由於泡菜會隨著時間持續發酵）, storing it properly can be <b>tricky</b>（要妥善保存並不容易）. A kimchi fridge keeps the temperature low, which slows fermentation and helps the flavor develop just right. <button class="spk" onclick="readSlow('Many South Korean families have a special refrigerator just for kimchi. Because kimchi continues to ferment over time, storing it properly can be tricky. A kimchi fridge keeps the temperature low, which slows fermentation and helps the flavor develop just right.')">🔊</button></p>
+    <p>A bowl of soup can also tell a family story. On their birthdays, many South Koreans have seaweed soup. This tradition has a warm and meaningful <b>background</b>（這項傳統有一段溫馨而深具意義的背景）. South Korean mothers often eat seaweed soup after they <b>give birth</b> to help their bodies recover（韓國母親生產後，通常會喝海帶湯來幫助身體恢復）. When people have it on their birthday, they are also <b>honoring</b> their mother's love and care（也是在向母親的愛與照顧表示敬意）. <button class="spk" onclick="readSlow('A bowl of soup can also tell a family story. On their birthdays, many South Koreans have seaweed soup. This tradition has a warm and meaningful background. South Korean mothers often eat seaweed soup after they give birth to help their bodies recover. When people have it on their birthday, they are also honoring their mother’s love and care.')">🔊</button></p>
+    <p>South Korean <b>manners</b> can also be seen when people drink together（人們一起喝酒時，也能看見韓國的風俗習慣）. In many social <b>(A) settings</b>, people usually avoid pouring their own drinks. Instead, they fill <b>one another</b>'s glasses（互相替對方斟滿酒杯）. This small action helps people show respect and turns drinking into a shared act of <b>consideration</b>（也讓喝酒成為一種彼此體貼的共同活動）. <button class="spk" onclick="readSlow('South Korean manners can also be seen when people drink together. In many social settings, people usually avoid pouring their own drinks. Instead, they fill one another’s glasses. This small action helps people show respect and turns drinking into a shared act of consideration.')">🔊</button></p>
+    <p>In South Korea, the first day in a new home often involves special traditions. After boxes are <b>(B) unpacked</b>, many families order jajangmyeon for everyone who helped them move. Jajangmyeon is a noodle dish in a thick black-bean sauce. It is <b>(E) filling</b> and easy to get delivered, so it has become a popular first meal in a new home. Guests may also bring toilet paper or <b>laundry</b>（待洗的衣服）detergent as <b>(C) housewarming</b> gifts. Toilet paper usually unrolls smoothly, so it <b>suggests</b>（意味著；暗指）that life will go well. Laundry detergent makes a lot of <b>bubbles</b>（泡；水泡；氣泡）that keep rising, which can stand for growing wealth and good <b>fortune</b>（代表財富增加與好運到來）. <button class="spk" onclick="readSlow('In South Korea, the first day in a new home often involves special traditions. After boxes are unpacked, many families order jajangmyeon for everyone who helped them move. Jajangmyeon is a noodle dish in a thick black-bean sauce. It is filling and easy to get delivered, so it has become a popular first meal in a new home. Guests may also bring toilet paper or laundry detergent as housewarming gifts. Toilet paper usually unrolls smoothly, so it suggests that life will go well. Laundry detergent makes a lot of bubbles that keep rising, which can stand for growing wealth and good fortune.')">🔊</button></p>
+    <p>On college entrance exam day, the <b>entire</b> country <b>comes together</b> to support test-takers（韓國全國上下都會一起為考生提供支持）. Many companies open later to keep the roads clear for test-takers. The police often help those who are running late reach test centers on time. Some airlines even pause <b>(F) takeoffs</b> and landings during the English listening test. This way, students are not <b>(D) disturbed</b> by the noise. <button class="spk" onclick="readSlow('On college entrance exam day, the entire country comes together to support test-takers. Many companies open later to keep the roads clear for test-takers. The police often help those who are running late reach test centers on time. Some airlines even pause takeoffs and landings during the English listening test. This way, students are not disturbed by the noise.')">🔊</button></p>
+    <p>Isn't it <b>charming</b> how a country's true <b>character</b> often hides in its smallest habits?（一個國家真正的性格，往往藏在最細微的生活習慣中，這不是很迷人嗎？） <button class="spk" onclick="readSlow('Isn’t it charming how a country’s true character often hides in its smallest habits?')">🔊</button></p>
+    <h3>25 格答案速查表</h3>
+    <table><tr><th>格</th><th>答案</th><th>格</th><th>答案</th><th>格</th><th>答案</th></tr>
+    <tr><td>1</td><td>urban</td><td>10</td><td>(A) settings</td><td>19</td><td>fortune</td></tr>
+    <tr><td>2</td><td>Yet</td><td>11</td><td>one another</td><td>20</td><td>entire</td></tr>
+    <tr><td>3</td><td>full of</td><td>12</td><td>consideration</td><td>21</td><td>comes together</td></tr>
+    <tr><td>4</td><td>over time</td><td>13</td><td>(B) unpacked</td><td>22</td><td>(F) takeoffs</td></tr>
+    <tr><td>5</td><td>tricky</td><td>14</td><td>(E) filling</td><td>23</td><td>(D) disturbed</td></tr>
+    <tr><td>6</td><td>background</td><td>15</td><td>laundry</td><td>24</td><td>charming</td></tr>
+    <tr><td>7</td><td>give birth</td><td>16</td><td>(C) housewarming</td><td>25</td><td>character</td></tr>
+    <tr><td>8</td><td>honoring</td><td>17</td><td>suggests</td><td></td><td></td></tr>
+    <tr><td>9</td><td>manners</td><td>18</td><td>bubbles</td><td></td><td></td></tr></table>
+  </div>
+</section>
+<!-- ============ TAB 3 ============ -->
+<section id="review">
+  <h2>📚 Reading 架構總複習</h2>
+
+  <h3>一、Reading</h3>
+  <div class="card">
+    <button class="btn" onclick="readSlow(document.getElementById('day9').innerText)">🔊 Nov. 9</button>
+    <button class="btn" onclick="readSlow(document.getElementById('day10').innerText)">🔊 Nov. 10</button>
+    <button class="btn" onclick="stopRead()">⏹ 停止</button>
+    <p style="font-weight:700">UNIT 4　Fun Facts　11/9–11/10　★★<br>A Closer Look at South Korea's Surprising Customs<br><span class="zh">韓國生活冷知識大公開！那些讓你意想不到的在地習俗</span></p>
+    <div id="day9">
+      <p><b>Nov. 9　¶1</b>　South Korea is <span class="kw">internationally known for</span> K-pop, dramas, and busy <span class="kw">urban</span> life. <mark>Yet</mark> there is <mark>another side that most people never see</mark>—one <span class="kw">full of interesting traditions hidden in everyday moments</span>.</p>
+      <p><b>¶2</b>　Many South Korean families have a special refrigerator just for <span class="kw">kimchi</span>. <mark>Because</mark> kimchi continues to <span class="kw">ferment over time</span>, storing it properly can be <span class="kw">tricky</span>. A kimchi fridge keeps the temperature low, <mark>which</mark> slows <span class="kw">fermentation</span> and helps the flavor develop just right.</p>
+      <p><b>¶3</b>　<mark>A bowl of soup can also tell a family story.</mark> On their birthdays, many South Koreans have seaweed soup. This tradition has a warm and meaningful <span class="kw">background</span>. South Korean mothers often eat seaweed soup after they <span class="kw">give birth</span> to help their bodies recover. When people have it on their birthday, they are <mark>also</mark> <span class="kw">honoring</span> their mother's love and care.</p>
+      <p><b>¶4</b>　South Korean <span class="kw">manners</span> can <mark>also</mark> be seen when people drink together. In many social <span class="kw">settings</span>, people usually <span class="kw">avoid pouring their own drinks</span>. <mark>Instead</mark>, they fill <span class="kw">one another's</span> glasses. This small action helps people show respect and <span class="kw">turns drinking into a shared act of consideration</span>.</p>
+    </div>
+    <div id="day10">
+      <p><b>Nov. 10　¶1</b>　In South Korea, the first day in a new home often <span class="kw">involves</span> special traditions. <mark>After boxes are unpacked</mark>, many families order jajangmyeon for everyone who helped them move. Jajangmyeon is a noodle dish in a thick black-bean sauce. It is <span class="kw">filling</span> and easy to get delivered, <mark>so</mark> it has become a popular first meal in a new home. Guests may <mark>also</mark> bring toilet paper or <span class="kw">laundry detergent</span> as <span class="kw">housewarming</span> gifts. Toilet paper usually unrolls smoothly, <mark>so</mark> it <span class="kw">suggests</span> that life will go well. Laundry detergent makes a lot of <span class="kw">bubbles</span> that keep rising, <mark>which</mark> can <span class="kw">stand for</span> growing wealth and good <span class="kw">fortune</span>.</p>
+      <p><b>¶2</b>　On college entrance exam day, the <span class="kw">entire</span> country <span class="kw">comes together</span> to support test-takers. Many companies open later to keep the roads clear for test-takers. The police often help those who are running late reach test centers on time. Some airlines <mark>even</mark> pause takeoffs and landings during the English listening test. <mark>This way</mark>, students are not <span class="kw">disturbed</span> by the noise.</p>
+      <p><b>¶3</b>　<mark>Isn't it charming how a country's true character often hides in its smallest habits?</mark></p>
+    </div>
+  </div>
+
+  <h3>二、架構偵察</h3>
+  <div id="genreQs"></div>
+
+  <div class="q">
+    <p class="stem">📐 Nov. 9 結構排序：請依序點選，排出這一天的組織順序。</p>
+    <div class="seq" id="seqA"></div>
+    <button class="btn" onclick="checkSeq('A')">✓ 檢查</button>
+    <button class="btn" onclick="resetSeq('A')">↺ 重排</button>
+    <button class="btn" onclick="toggleSol('solSeqA')">📖 參考解答：</button>
+    <div class="sol" id="solSeqA"><b>正解順序：</b>①→②→③→④。Nov. 9 走「破題：韓國還有另一面 → 習俗一：泡菜冰箱 → 習俗二：生日海帶湯 → 習俗三：斟酒禮儀」。<br><b>解題程序：</b>抓訊號詞 Yet（推翻既有印象、帶出全段主張）／A bowl of soup can also tell…（also 表再加一項）／South Korean manners can also be seen…（again also）。<br><b>常見錯誤：</b>把「斟酒禮儀」排到「泡菜冰箱」之前——兩個 also 都要求前面已經有一項，第一項只能是沒有 also 的泡菜段。</div>
+  </div>
+
+  <div class="q">
+    <p class="stem">🕒 Nov. 10 結構排序：請依課文出現順序點選。</p>
+    <div class="seq" id="seqB"></div>
+    <button class="btn" onclick="checkSeq('B')">✓ 檢查</button>
+    <button class="btn" onclick="resetSeq('B')">↺ 重排</button>
+    <button class="btn" onclick="toggleSol('solSeqB')">📖 參考解答：</button>
+    <div class="sol" id="solSeqB"><b>正解順序：</b>喬遷第一天的傳統：先訂炸醬麵 → 再談衛生紙與洗衣精兩種喬遷禮的象徵 → 大考當天全國動員（企業、警察、航空公司）→ 以反問句收尾，點出「性格藏在小習慣裡」。<br><b>解題程序：</b>¶1 用 After boxes are unpacked 開場，Guests may also bring… 再加一層；¶2 轉到 college entrance exam day；¶3 的 Isn't it charming…? 是結尾的修辭性問句。<br><b>常見錯誤：</b>把禮物象徵排在炸醬麵之前——also 標示它是「再補一項」，不能排第一。</div>
+  </div>
+
+  <div class="q">
+    <p class="stem">🧩 摘要重組（Nov. 9）：句子已打散，請依說明文結構依序點選——第 1 句＝主題句，第 2、3 句＝兩個支持論點，第 4 句＝結論句。</p>
+    <div class="seq" id="seqR9"></div>
+    <button class="btn" onclick="checkSeq('R9')">✓ 檢查</button>
+    <button class="btn" onclick="resetSeq('R9')">↺ 重排</button>
+    <button class="btn" onclick="toggleSol('solSeqR9')">📖 參考解答：</button>
+    <div class="sol" id="solSeqR9"><b>摘要 Summary：</b>Yet there is another side of South Korea that most people never see—one full of interesting traditions hidden in everyday moments. Many families have a special refrigerator just for kimchi, because a kimchi fridge keeps the temperature low, which slows fermentation. On their birthdays, many South Koreans have seaweed soup to honor their mother's love and care. South Korean manners can also be seen when people fill one another's glasses to show respect. <button class="spk" onclick="readSlow('Yet there is another side of South Korea that most people never see, one full of interesting traditions hidden in everyday moments. Many families have a special refrigerator just for kimchi, because a kimchi fridge keeps the temperature low, which slows fermentation. On their birthdays, many South Koreans have seaweed soup to honor their mother’s love and care. South Korean manners can also be seen when people fill one another’s glasses to show respect.')">🔊</button><br>（第 1 句＝主題句；第 2 句＝支持論點一；第 3 句＝支持論點二；第 4 句＝結論句）<br><b>判斷程序：</b>① 帶 Yet 並提出「另一面」這個全段主張者為主題句。② 泡菜冰箱是第一個習俗。③ 生日海帶湯是第二個習俗。④ 帶 can also be seen 的斟酒禮儀是最後一項，同時把三個例子收束到「禮儀與體貼」這個層面。<br><b>常見錯誤：</b>把主題句排到中間，會讓三個習俗失去共同的統攝句。</div>
+  </div>
+
+  <div class="q">
+    <p class="stem">🧩 摘要重組（Nov. 10）：句子已打散，請依說明文結構依序點選——第 1 句＝主題句，第 2、3 句＝兩個支持論點，第 4 句＝結論句。</p>
+    <div class="seq" id="seqR10"></div>
+    <button class="btn" onclick="checkSeq('R10')">✓ 檢查</button>
+    <button class="btn" onclick="resetSeq('R10')">↺ 重排</button>
+    <button class="btn" onclick="toggleSol('solSeqR10')">📖 參考解答：</button>
+    <div class="sol" id="solSeqR10"><b>摘要 Summary：</b>In South Korea, the first day in a new home often involves special traditions. Many families order jajangmyeon because it is filling and easy to get delivered, and guests bring toilet paper or laundry detergent as housewarming gifts that stand for good fortune. On college entrance exam day, the entire country comes together to support test-takers, and some airlines even pause takeoffs and landings. Isn't it charming how a country's true character often hides in its smallest habits? <button class="spk" onclick="readSlow('In South Korea, the first day in a new home often involves special traditions. Many families order jajangmyeon because it is filling and easy to get delivered, and guests bring toilet paper or laundry detergent as housewarming gifts that stand for good fortune. On college entrance exam day, the entire country comes together to support test-takers, and some airlines even pause takeoffs and landings. Isn’t it charming how a country’s true character often hides in its smallest habits?')">🔊</button><br>（第 1 句＝主題句；第 2 句＝支持論點一；第 3 句＝支持論點二；第 4 句＝結論句）<br><b>判斷程序：</b>① 提出「喬遷第一天有特殊傳統」的句子為主題句。② 炸醬麵與喬遷禮是第一個支持論點。③ 大考當天的全國動員是第二個支持論點。④ 以反問句 Isn't it charming…? 收尾，把兩天的所有例子拉高成通則。<br><b>常見錯誤：</b>把反問句排到中間——它不含任何具體例子，只能當結論句。</div>
+  </div>
+
+  <h3>三、四層次思考（English A2–B1／中文解說）</h3>
+  <div id="fourQs"></div>
+
+  <h3>四、學測題型</h3>
+  <div id="gsatQs"></div>
+
+  <div class="q">
+    <p class="stem">🈺 翻譯 1：我們應該互相傾聽，並尊重不同的想法。</p>
+    <p>We should listen to <input class="blank" id="tr1a"> <input class="blank" id="tr1b"> and respect different ideas.</p>
+    <button class="btn" onclick="toggleSol('solTr1')">📖 參考解答：</button>
+    <div class="sol" id="solTr1"><b>✅ 答案：</b>We should listen to <b>one another</b> and respect different ideas. <button class="spk" onclick="readWord('We should listen to one another and respect different ideas.')">🔊</button><br><b>📘 出處：</b>U4<br><b>🔍 解析：</b>片語 one another 意為「彼此；互相」，語氣較正式，常用於表示兩者或兩者以上的人或事物互相做某件事。此代名詞常放在動詞或介系詞後方作受詞，例如 help one another「彼此幫助」、talk to one another「互相交談」。在現代英語中，one another 和 each other 的用法大致相同，口語使用上 each other 則較常見。</div>
+  </div>
+
+  <div class="q">
+    <p class="stem">🈺 翻譯 2：泡菜冰箱維持低溫，這會減緩發酵速度。</p>
+    <textarea id="tr2" rows="2"></textarea>
+    <button class="btn" onclick="toggleSol('solTr2')">📖 參考解答：</button>
+    <div class="sol" id="solTr2">A kimchi fridge keeps the temperature low, which slows fermentation. <button class="spk" onclick="readWord('A kimchi fridge keeps the temperature low, which slows fermentation.')">🔊</button><br><b>解說：</b>which 引導非限定形容詞子句，前方必須加逗號；此處的先行詞不是單一名詞，而是「泡菜冰箱維持低溫」這整件事。keep + O + adj. 為受詞補語結構，low 不可改成副詞 lowly。</div>
+  </div>
+</section>
+
+<!-- ============ TAB 4 ============ -->
+<section id="board">
+  <h2>🎲 摘要大富翁</h2>
+  <p>擲骰子前進，停在哪一格就答哪一題。答對得分並保留該格，答錯留在原地重整旗鼓。走完 12 格即完成一圈。</p>
+  <div class="board" id="boardGrid"></div>
+  <button class="btn" onclick="roll()">🎲 擲骰子</button>
+  <button class="btn" onclick="resetBoard()">↺ 重新開始</button>
+  <p id="diceMsg" style="font-weight:700"></p>
+  <div id="boardQ"></div>
+</section>
+
+<!-- ============ TAB 5 ============ -->
+<section id="gias">
+  <h2>✍️ GIAS 綜合練習與 RCQ</h2>
+
+  <h3>一、GIAS（Nov. 9）｜綜合練習</h3>
+  <div class="q">
+    <p class="stem">1. 請用本課 Language in Focus 句型完成以下引導式翻譯：班傑明通過了數學考試，這件事讓我們班每個人都很驚訝。</p>
+    <p>Benjamin <input class="blank" style="min-width:340px" id="g1">.</p>
+    <button class="btn" onclick="toggleSol('solG1')">📖 參考解答：</button>
+    <div class="sol" id="solG1"><b>✅ 答案：</b>passed the math exam, which surprised everyone in our class <button class="spk" onclick="readWord('Benjamin passed the math exam, which surprised everyone in our class.')">🔊</button><br><b>🔍 解析：</b>「這件事」指的是前面整個句子「班傑明通過了數學考試」，因此用關係代名詞 which 引導非限定形容詞子句，which 前方必須加逗號。which 在子句中當主詞，後面直接接動詞 surprised。常見錯誤：寫成 …, that surprised everyone——that 不能引導非限定用法。</div>
+  </div>
+
+  <div class="q">
+    <p class="stem">2. 請問下句當中的 which 代表的是什麼？<br>Ella forgot to charge her phone, which made her miss the morning meeting.</p>
+    <p>(A) Ella's phone.<br>(B) The morning meeting.<br>(C) The fact that Ella forgot to charge her phone.<br>(D) The fact that Ella missed the morning meeting.</p>
+    <textarea id="g2" rows="1" placeholder="請寫下你選的選項，例如 A"></textarea>
+    <button class="btn" onclick="toggleSol('solG2')">📖 參考解答：</button>
+    <div class="sol" id="solG2"><b>✅ 答案：(C)</b><br><b>🔍 解析：</b>非限定用法的 which 若放在逗號之後、且前面是一個完整句子，它代表的就是「前面整件事」。此句中造成 Ella 錯過會議的原因是「她忘記充電」這整件事，而不是手機本身。<br><b>為何其他錯：</b>(A) 若 which 只指手機，語意會變成「手機讓她錯過會議」，與邏輯不符；(B) 會議是結果不是原因；(D) 錯過會議是 which 子句的結果，不是 which 本身。</div>
+  </div>
+
+  <h3>二、RCQ（Nov. 10）｜閱讀理解</h3>
+  <div id="rcqQs"></div>
+
+  <h3>三、混合題型挑戰</h3>
+  <div id="mixQs"></div>
+
+  <div class="q">
+    <p class="stem">3. Which TWO of the following statements are true about South Korean customs?</p>
+    <p>(A) A kimchi fridge keeps the temperature low to slow fermentation.<br>
+    (B) People pour their own drinks first to show respect.<br>
+    (C) Seaweed soup on a birthday also honors the mother's love and care.<br>
+    (D) Toilet paper is given because it is cheap and easy to buy.<br>
+    (E) All airlines stop flying for the whole exam day.<br>
+    (F) Companies open earlier on exam day so students can arrive sooner.</p>
+    <textarea id="m3" rows="1" placeholder="請寫下兩個選項，例如 AB"></textarea>
+    <button class="btn" onclick="toggleSol('solM3')">📖 參考解答：</button>
+    <div class="sol" id="solM3"><b>✅ 答案：(A)(C)</b><br><b>🔍 解析：</b>(A) 對應 A kimchi fridge keeps the temperature low, which slows fermentation；(C) 對應 they are also honoring their mother's love and care。<br><b>為何其他錯：</b>(B) 課文說 avoid pouring their own drinks，正好相反；(D) 衛生紙的理由是 unrolls smoothly, so it suggests that life will go well，是象徵意義而非便宜；(E) 課文說 Some airlines even pause takeoffs and landings during the English listening test——是「部分航空公司、在英聽期間」，不是全部停飛一整天；(F) 課文說 open later 而非 earlier。<br><b>解題程序：</b>多選題逐一把選項配回原句，本課的三大陷阱是 Some／All、later／earlier，以及象徵意義被換成實用理由。</div>
+  </div>
+
+  <div class="q">
+    <p class="stem">4. Complete the following sentences with information from the article. Change the forms of the words to make the sentences correct.</p>
+    <p>Filling one another's glasses is a sign of <input class="blank" id="m4a"> for the people at the table. On exam day, airlines pause takeoffs so that test-takers will not be <input class="blank" id="m4b"> by the noise.</p>
+    <button class="btn" onclick="toggleSol('solM4')">📖 參考解答：</button>
+    <div class="sol" id="solM4"><b>✅ 答案：</b>consideration；disturbed <button class="spk" onclick="readWord('Filling one another’s glasses is a sign of consideration for the people at the table. On exam day, airlines pause takeoffs so that test-takers will not be disturbed by the noise.')">🔊</button><br><b>🔍 解析：</b>第一格在介系詞 of 之後，需要名詞，課文原句 a shared act of consideration 提供 consideration。第二格在 be 動詞之後、後接 by，需要過去分詞構成被動語態，課文原句 students are not disturbed by the noise 提供 disturbed。<br><b>解題程序：</b>詞形轉換題先判斷空格的「詞性位置」——介系詞後＝名詞；be 動詞＋by＝過去分詞——再回課文找同源字。</div>
+  </div>
+</section>
+<!-- ============ TAB 6 ============ -->
+<section id="life">
+  <h2>🥢 生活應用 Korea Lab</h2>
+  <div class="card" style="text-align:center">
+    <svg viewBox="0 0 340 150" style="width:100%;max-width:330px;height:auto" role="img" aria-label="A kimchi fridge, a bowl of seaweed soup, and a bowl of black-bean noodles">
+      <rect x="0" y="0" width="340" height="150" rx="14" fill="#FFFBEB"/>
+      <g transform="translate(22,26)">
+        <rect x="0" y="0" width="74" height="100" rx="10" fill="#E2F1FF" stroke="#4A3E3D" stroke-width="3"/>
+        <line x1="0" y1="36" x2="74" y2="36" stroke="#4A3E3D" stroke-width="3"/>
+        <rect x="58" y="12" width="6" height="16" rx="3" fill="#4A3E3D"/>
+        <rect x="58" y="48" width="6" height="20" rx="3" fill="#4A3E3D"/>
+        <circle cx="24" cy="60" r="10" fill="#C2557A" opacity=".65"/>
+        <circle cx="40" cy="76" r="8" fill="#C2557A" opacity=".5"/>
+        <circle cx="22" cy="84" r="6" fill="#C2557A" opacity=".45"/>
+      </g>
+      <g transform="translate(122,56)">
+        <path d="M0 10 Q40 -6 80 10 Q70 46 40 46 Q10 46 0 10 Z" fill="#FFFDF9" stroke="#6B5A59" stroke-width="3"/>
+        <path d="M10 14 Q24 24 38 14 Q52 24 68 14" stroke="#3F9D6B" stroke-width="4" fill="none"/>
+        <path d="M14 24 Q30 34 46 24 Q58 32 70 24" stroke="#3F9D6B" stroke-width="4" fill="none"/>
+        <ellipse cx="40" cy="50" rx="30" ry="5" fill="#e4d6f2"/>
+      </g>
+      <g transform="translate(226,52)">
+        <path d="M0 12 Q44 -6 88 12 Q76 52 44 52 Q12 52 0 12 Z" fill="#FFFDF9" stroke="#6B5A59" stroke-width="3"/>
+        <path d="M8 16 Q44 4 80 16 Q70 40 44 40 Q18 40 8 16 Z" fill="#4A3E3D"/>
+        <g stroke="#FFF3B0" stroke-width="3"><line x1="22" y1="22" x2="30" y2="34"/><line x1="40" y1="20" x2="44" y2="36"/><line x1="58" y1="22" x2="54" y2="34"/></g>
+        <line x1="62" y1="-6" x2="86" y2="14" stroke="#8a6fae" stroke-width="3" stroke-linecap="round"/>
+        <line x1="70" y1="-10" x2="92" y2="10" stroke="#8a6fae" stroke-width="3" stroke-linecap="round"/>
+      </g>
+    </svg>
+  </div>
+
+  <h3>一、Vocabulary（Nov. 9）</h3>
+  <div class="card" id="voc9"></div>
+
+  <h3>二、字彙小補帖（Nov. 9）</h3>
+  <div class="card" id="pk9"></div>
+
+  <h3>三、Vocabulary（Nov. 10）</h3>
+  <div class="card" id="voc10"></div>
+
+  <h3>四、字彙小補帖（Nov. 10）</h3>
+  <div class="card" id="pk10"></div>
+
+  <h3>五、Pocket Phrase</h3>
+  <div class="card" id="pocketP"></div>
+
+  <h3>六、文化小百科</h3>
+  <div class="card">
+    <p><b>韓式炸醬麵（jajangmyeon）</b>｜以濃稠黑豆醬拌麵，份量飽足又方便外送，因此成為韓國人搬家第一天最受歡迎的第一餐。 <button class="spk" onclick="readWord('Jajangmyeon is a noodle dish in a thick black-bean sauce. It is filling and easy to get delivered.')">🔊</button></p>
+    <p><b>喬遷禮的象徵</b>｜衛生紙會順暢地展開，象徵日子順順利利；洗衣精會產生源源不絕、不斷上升的泡泡，象徵財富增加與好運到來。 <button class="spk" onclick="readWord('Toilet paper usually unrolls smoothly, so it suggests that life will go well. Laundry detergent makes a lot of bubbles that keep rising, which can stand for growing wealth and good fortune.')">🔊</button></p>
+  </div>
+
+  <h3>七、生活情境判斷</h3>
+  <div id="lifeQs"></div>
+
+  <h3>八、延伸寫作</h3>
+  <div class="q">
+    <p class="stem">✍️ A Korean friend is coming to Taiwan. Write 3–4 sentences to introduce one Taiwanese custom. You must use <b>stand for</b> and a non-restrictive <b>which</b> clause.</p>
+    <textarea id="lwrite" rows="4" placeholder="In Taiwan, we often give ... as a gift, which ..."></textarea>
+    <button class="btn" onclick="toggleSol('solLW')">📖 參考解答：</button>
+    <div class="sol" id="solLW"><b>參考寫法：</b>In Taiwan, we often give pineapple cakes to guests, which stand for good luck and wealth. The Taiwanese word for pineapple sounds like "good things are coming," so the fruit stands for a bright future. Like a kimchi fridge or a bowl of seaweed soup, a small gift can tell a big story about a country's character. <button class="spk" onclick="readWord('In Taiwan, we often give pineapple cakes to guests, which stand for good luck and wealth. The Taiwanese word for pineapple sounds like good things are coming, so the fruit stands for a bright future. Like a kimchi fridge or a bowl of seaweed soup, a small gift can tell a big story about a country’s character.')">🔊</button><br><b>評分重點：</b>(1) which 前面必須加逗號，且它代表的是前面整件事或獨一無二的先行詞；(2) stand for 後接名詞，表「代表、象徵」；(3) 結尾呼應課文的 a country's true character often hides in its smallest habits。</div>
+  </div>
+</section>
+
+<!-- ============ TAB 7 ============ -->
+<section id="focus">
+  <h2>📐 Language in Focus</h2>
+
+  <h3>Nov. 9｜關係代名詞 which 的非限定用法</h3>
+  <div class="card">
+    <p>關係代名詞 which 所帶領的非限定形容詞子句用來補充說明前方的先行詞，which 前方須加上逗號與先行詞分隔。此用法有兩種類型的先行詞：</p>
+    <p><b>1. 先行詞是完整的句子（代表一整件事）：</b></p>
+    <p>• A kimchi fridge keeps the temperature low, <b>which</b> slows fermentation and helps the flavor develop just right.（課文第 10~12 行） <button class="spk" onclick="readWord('A kimchi fridge keeps the temperature low, which slows fermentation and helps the flavor develop just right.')">🔊</button><br><span class="zh">→ which 代表的是「泡菜冰箱維持低溫」這個作用。</span></p>
+    <p>• Laundry detergent makes a lot of bubbles that keep rising, <b>which</b> can stand for growing wealth and good fortune.（第二天課文第 13~15 行） <button class="spk" onclick="readWord('Laundry detergent makes a lot of bubbles that keep rising, which can stand for growing wealth and good fortune.')">🔊</button><br><span class="zh">→ which 代表的是「洗衣精會產生源源不絕、不斷上升的泡泡」這一件事。</span></p>
+    <p>• I had to work late at the office yesterday, <b>which</b> caused me to miss the movie. <button class="spk" onclick="readWord('I had to work late at the office yesterday, which caused me to miss the movie.')">🔊</button><br><span class="zh">我昨天必須在辦公室工作到很晚，這導致我錯過了那場電影。</span></p>
+    <p><b>2. 先行詞是單一名詞（片語），並且具有「獨一無二」的特性：</b></p>
+    <p>• The painting, <b>which</b> is valued at more than US$5,000, was stolen from the museum last night. <button class="spk" onclick="readWord('The painting, which is valued at more than five thousand US dollars, was stolen from the museum last night.')">🔊</button><br><span class="zh">這幅價值超過五千美元的畫作，昨晚被人從博物館偷走。</span></p>
+    <p><b>使用提醒：</b>① 非限定用法的關係代名詞不可用 that 代替，也不可省略。② which 代表前面整件事時，動詞的單複數視該事件為單數，用 slows、caused 這類單數動詞。③ 非限定子句插在句中時，前後都要有逗號（The painting, which…, was stolen…）。</p>
+  </div>
+
+  <h3>句型辨識練習</h3>
+  <div id="focusQs"></div>
+
+  <div class="q">
+    <p class="stem">✍️ 合併練習：請用非限定用法的 which 合併以下兩句。<br>Many companies open later on exam day. ／ This keeps the roads clear for test-takers.</p>
+    <textarea id="fw1" rows="2"></textarea>
+    <button class="btn" onclick="toggleSol('solFW1')">📖 參考解答：</button>
+    <div class="sol" id="solFW1"><b>參考答案：</b>Many companies open later on exam day, which keeps the roads clear for test-takers. <button class="spk" onclick="readWord('Many companies open later on exam day, which keeps the roads clear for test-takers.')">🔊</button><br><b>解說：</b>合併程序：① 確認第二句的 This 指的是前面整件事。② 把 This 換成 which，並在前面加逗號。③ which 代表整件事時視為單數，動詞用 keeps。常見錯誤：寫成 …, that keeps…，但 that 不能引導非限定用法。</div>
+  </div>
+
+  <div class="q">
+    <p class="stem">✍️ 判斷練習：下面兩句的 which 各自代表什麼？請說明。<br>(甲) Toilet paper unrolls smoothly, which suggests that life will go well.<br>(乙) The kimchi fridge, which my grandmother bought ten years ago, still works well.</p>
+    <textarea id="fw2" rows="3"></textarea>
+    <button class="btn" onclick="toggleSol('solFW2')">📖 參考解答：</button>
+    <div class="sol" id="solFW2"><b>參考答案：</b>(甲) which 代表「衛生紙會順暢地展開」這整件事，屬第一類用法。(乙) which 代表單一名詞 the kimchi fridge，且這台冰箱是特定且獨一無二的，屬第二類用法。<br><b>解說：</b>判斷程序：先看 which 前面是「一個完整句子」還是「一個名詞」。若整句都可以被 which 取代（可改寫成 and this…），就是第一類；若只補充說明某個特定名詞，且該名詞前後都有逗號夾住子句，就是第二類。</div>
+  </div>
+</section>
+<!-- ============ TAB 8 ============ -->
+<section id="analysis">
+  <h2>🧭 文體與組織分析</h2>
+
+  <h3>Passage 1（Nov. 9）：藏在日常裡的三個習俗</h3>
+  <div class="card">
+    <p><b>文體：</b>說明文 (Expository)，以列點舉例與因果說明為主要手法。</p>
+    <p>• 全篇現在式陳述長期為真的風俗（is known for、have、continues to ferment、eat、fill），非一次性事件 → 非敘述文。</p>
+    <p>• 作者客觀介紹習俗並解釋成因，不爭辯立場、無須被辯護的主張 → 非議論文。</p>
+    <p>• 雖有食物與場景的具體細節，但都服務於習俗說明而非營造畫面 → 非描述文。</p>
+    <p>• 開頭先給「大家都知道的韓國」，再用 Yet 轉出「大家沒看見的另一面」，屬說明文常見的「先立後破」開場。</p>
+    <p><b>組織方式：</b>Common Image → Hidden Side（既有印象與另一面）＋ Listing of Customs（列點舉例）＋ Cause-Explanation（每項習俗附成因或意義）。</p>
+    <table>
+      <tr><th>段落</th><th>功能</th><th>關鍵語言標記</th></tr>
+      <tr><td>¶1</td><td>破題：先承認 K-pop、戲劇與都市生活的國際印象，再用 Yet 帶出「藏在日常裡的傳統」這個全段主張</td><td>is internationally known for / Yet（轉折）/ another side that most people never see / full of… hidden in everyday moments</td></tr>
+      <tr><td>¶2</td><td>習俗一：泡菜冰箱——先給成因（泡菜持續發酵、保存不易），再說明冰箱的作用</td><td>Because… continues to ferment over time（原因）/ storing it properly can be tricky / keeps the temperature low, which…（非限定子句補充作用）</td></tr>
+      <tr><td>¶3</td><td>習俗二：生日海帶湯——從「湯能說家族故事」切入，解釋產後飲食的由來，再連到「向母親致敬」</td><td>A bowl of soup can also tell a family story（also 加碼）/ This tradition has a warm and meaningful background / after they give birth / they are also honoring…</td></tr>
+      <tr><td>¶4</td><td>習俗三：斟酒禮儀——先給禁忌（不替自己倒酒），再用 Instead 給做法，最後拉高到「體貼」的層面</td><td>can also be seen（再加碼）/ avoid pouring their own drinks / Instead（對比）/ one another's glasses / turns drinking into a shared act of consideration</td></tr>
+    </table>
+    <p><b>結構要點：</b>三個習俗由兩個 also 串成並列清單，且都遵循「現象 → 成因／意義」的同一內部節奏：泡菜冰箱解決保存問題、海帶湯承載母愛、斟酒禮儀體現體貼。範圍也從「食物保存」擴到「家庭情感」再到「人際禮儀」，層次逐步往人情推進。</p>
+    <p><b>摘要 Summary：</b>完整四句摘要已改為「📚 Reading 架構總複習」頁籤中的摘要重組題，請在該處按壓排序後再點開參考解答對照。</p>
+  </div>
+
+  <h3>Passage 2（Nov. 10）：從一個家到一個國家</h3>
+  <div class="card">
+    <p><b>文體：</b>說明文 (Expository)，結尾以修辭性問句收束，帶輕微的評價色彩。</p>
+    <p>• 全篇現在式陳述通則（involves、order、suggests、comes together、pause），屬說明性質 → 非敘述文。</p>
+    <p>• 兩段各介紹一個場合的習俗並附理由，屬列點說明 → 組織上與 Nov. 9 對稱。</p>
+    <p>• 末句 Isn't it charming…? 是反問，不等待回答，功能在引導讀者同意，使文體帶一點評價，但沒有正反交鋒 → 不算議論文。</p>
+    <p>• 無時間序列與情節，也無感官畫面經營 → 非敘述文、非描述文。</p>
+    <p><b>組織方式：</b>Listing of Customs（列點說明）＋ Symbol-Explanation（象徵與解釋）＋ Scale Expansion（由個人到全國）＋ Rhetorical Question（反問收尾）。</p>
+    <table>
+      <tr><th>段落</th><th>功能</th><th>關鍵語言標記</th></tr>
+      <tr><td>¶1</td><td>場合一：喬遷第一天——先給食物（炸醬麵及其理由），再給禮物（衛生紙與洗衣精及其象徵）</td><td>often involves special traditions / After boxes are unpacked / It is filling and easy to get delivered, so…（因果）/ Guests may also bring…（加碼）/ unrolls smoothly, so it suggests… / which can stand for…（非限定子句）</td></tr>
+      <tr><td>¶2</td><td>場合二：大考當天——企業、警察、航空公司三個層面的配合，規模由個別擴到全國</td><td>the entire country comes together / Many companies… / The police often… / Some airlines even…（even 表意料之外的程度）/ This way（結果）</td></tr>
+      <tr><td>¶3</td><td>收尾：以反問句把兩天的所有例子拉高成通則——國家性格藏在最小的習慣裡</td><td>Isn't it charming how…?（修辭性問句）/ a country's true character / its smallest habits（大小對比）</td></tr>
+    </table>
+    <p><b>結構要點：</b>這一天的規模是逐步放大的：¶1 在一個家裡（食物與禮物），¶2 擴到整個國家（企業、警方、航空公司），¶3 再用一句反問把兩天的所有細節收攏。末句的 true character 與 smallest habits 形成「大／小」對比，正好呼應標題的 A Closer Look——越靠近看，越能看見真正的樣子。</p>
+    <p><b>摘要 Summary：</b>完整四句摘要已改為「📚 Reading 架構總複習」頁籤中的摘要重組題，請在該處按壓排序後再點開參考解答對照。</p>
+  </div>
+
+  <h3>兩段對照一覽</h3>
+  <table>
+    <tr><th>比較項目</th><th>Nov. 9</th><th>Nov. 10</th></tr>
+    <tr><td>文體</td><td>說明文（列點舉例＋因果說明）</td><td>說明文（列點說明＋反問收尾）</td></tr>
+    <tr><td>論述焦點</td><td>日常裡的三個習俗：泡菜冰箱、生日海帶湯、斟酒禮儀</td><td>兩個場合的習俗：喬遷第一天、大考當天</td></tr>
+    <tr><td>組織方式</td><td>既有印象→另一面＋三項並列</td><td>列點說明＋象徵解釋＋規模由小到大</td></tr>
+    <tr><td>關鍵連接語</td><td>Yet、Because、which、also、Instead</td><td>After、so、also、which、even、This way、Isn't it…?</td></tr>
+    <tr><td>收尾方式</td><td>把習俗拉高到「禮儀與體貼」</td><td>反問句收束兩天，點出「性格藏在小習慣裡」</td></tr>
+  </table>
+
+  <h3>語言結構與生活活用</h3>
+  <div class="card">
+    <p>• <b>標題即視角：</b>A Closer Look 預告全文的方法論——不是看 K-pop 與都市天際線，而是把鏡頭推近到冰箱、湯碗與酒杯；末句的 smallest habits 正是對標題的回收。</p>
+    <p>• <b>先立後破的開場：</b>先承認 internationally known for K-pop, dramas, and busy urban life，再用 Yet 轉出 another side that most people never see——這是說明文最常見的破題法，可直接遷移到任何「介紹冷知識」的寫作。</p>
+    <p>• <b>非限定 which 的兩種先行詞：</b>keeps the temperature low, which slows fermentation（代表整件事）／The painting, which is valued at…（代表單一且獨一無二的名詞）——判斷靠 which 前面是句子還是名詞。</p>
+    <p>• <b>象徵的說法三件組：</b>suggests that life will go well（暗指）／stand for growing wealth（代表）／a shared act of consideration（體現）——同一課用三種方式講「象徵」，寫作時可交替使用避免重複。</p>
+    <p>• <b>one another 與 each other：</b>one another 語氣較正式，常用於兩者或兩者以上；each other 口語較常見。兩者都放在動詞或介系詞後方當受詞，所有格寫成 one another's glasses。</p>
+    <p>• <b>also 與 even 的加碼層次：</b>兩個 also 把三個習俗串成並列清單；Some airlines even pause takeoffs 的 even 則標示「連這都做」的意外程度，強度高於 also。</p>
+    <p>• <b>代名詞回指 (anaphor)：</b>¶1 的 one 回指 another side；¶3 的 it 指 seaweed soup；Nov. 10 的 it 指 jajangmyeon、those 指 test-takers——讀題時務必先釘住指涉對象。</p>
+    <p>• <b>範圍詞的陷阱：</b>Some airlines（部分航空公司）、Many companies（許多企業）、many South Koreans（許多韓國人）——閱讀測驗最愛把 Some／Many 偷換成 All，作答時要逐一核對。</p>
+    <p>• <b>生活活用：</b>be known for、full of、over time、give birth to、one another、stand for、come together、This way 八組可直接遷移到任何「介紹文化習俗」的口說與寫作題型。</p>
+  </div>
+</section>
+</main>
+<div id="toast"></div>
+<script>
+/* ---------- state ---------- */
+const S=JSON.parse(localStorage.getItem('u4koreastate')||'{}');
+S.pts=S.pts||0;S.streak=S.streak||0;S.ok=S.ok||0;S.tot=S.tot||0;S.cat=S.cat||'noun';
+S.text=S.text||{};S.done=S.done||{};
+function save(){localStorage.setItem('u4koreastate',JSON.stringify(S));}
+function wipe(){localStorage.removeItem('u4koreastate');location.reload();}
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.style.display='block';
+ clearTimeout(t._t);t._t=setTimeout(()=>t.style.display='none',3500);}
+function toggleMenu(){const m=document.getElementById('menu');m.classList.toggle('open');
+ document.getElementById('menuBtn').textContent=m.classList.contains('open')?'✕ 關閉':'☰ 選單';}
+document.addEventListener('click',e=>{const m=document.getElementById('menu');
+ if(m.classList.contains('open')&&!m.contains(e.target)&&e.target.id!=='menuBtn')toggleMenu();});
+function go(id){document.querySelectorAll('main section').forEach(s=>s.classList.remove('active'));
+ document.getElementById(id).classList.add('active');window.scrollTo(0,0);toggleMenu();}
+function toggleScore(){document.getElementById('score').classList.toggle('show');}
+function toggleSol(id){document.getElementById(id).classList.toggle('show');}
+function award(n){S.pts+=n;S.ok++;S.tot++;S.streak++;S.pts+=Math.min(S.streak,5)*20;paint();save();boom();}
+function miss(){S.tot++;S.streak=0;paint();save();}
+function paint(){const p=document.getElementById('pts');p.textContent=S.pts;
+ p.classList.remove('pop');void p.offsetWidth;p.classList.add('pop');
+ document.getElementById('streak').textContent=S.streak;
+ document.getElementById('nok').textContent=S.ok;document.getElementById('ntot').textContent=S.tot;}
+
+/* ---------- speech ---------- */
+function speak(t,r){if(!window.speechSynthesis)return;speechSynthesis.cancel();
+ const u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=r;speechSynthesis.speak(u);}
+function readWord(t){speak(t,1.0);}
+function readSlow(t){speak(t,0.9);}
+function stopRead(){if(window.speechSynthesis)speechSynthesis.cancel();}
+
+/* ---------- fireworks ---------- */
+const cv=document.getElementById('fw'),cx=cv.getContext('2d');let ps=[];
+function sz(){cv.width=innerWidth;cv.height=innerHeight;}sz();addEventListener('resize',sz);
+const COLS=['#E2F1FF','#F3E8FF','#FCE7F3','#FFFBEB','#ECFDF5','#FFD6E8','#CDE9FF'];
+function boom(){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ const x=innerWidth/2,y=innerHeight/3;
+ for(let i=0;i<60;i++){const a=Math.random()*Math.PI*2,s=2+Math.random()*6;
+  ps.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,a:1,c:COLS[i%COLS.length]});}}
+function loop(){cx.clearRect(0,0,cv.width,cv.height);
+ ps.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=0.08;p.a-=0.012;
+  cx.globalAlpha=Math.max(p.a,0);cx.fillStyle=p.c;cx.beginPath();cx.arc(p.x,p.y,3.5,0,7);cx.fill();});
+ ps=ps.filter(p=>p.a>0);cx.globalAlpha=1;requestAnimationFrame(loop);}loop();
+
+/* ---------- helpers ---------- */
+function esc(s){return s.replace(/\\/g,'\\\\').replace(/'/g,"\\'");}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+/* ---------- generic MC ---------- */
+function mc(host,list,tag){
+ host.innerHTML=list.map((q,i)=>`<div class="q" id="${tag}${i}">
+  <p class="stem">${i+1}. ${q.s} <button class="spk" onclick="readWord('${esc(q.s.replace(/<[^>]+>/g,''))}')">🔊</button></p>
+  ${q.o.map((o,j)=>`<button class="opt" onclick="pick('${tag}',${i},${j})">(${'ABCD'[j]}) ${o}</button>`).join('')}
+  <button class="btn" onclick="toggleSol('${tag}s${i}')">📖 參考解答：</button>
+  <div class="sol" id="${tag}s${i}"><b>正解：(${'ABCD'[q.a]})</b> ${q.o[q.a]}<br>${q.e}</div></div>`).join('');
+ window['DATA_'+tag]=list;}
+function pick(tag,i,j){const q=window['DATA_'+tag][i];const box=document.getElementById(tag+i);
+ if(box.dataset.done)return;box.dataset.done=1;
+ const btns=box.querySelectorAll('.opt');btns.forEach((b,k)=>{if(k===q.a)b.classList.add('right');});
+ if(j===q.a){award(100);toast('✅ 答對！＋分');}else{btns[j].classList.add('wrong');miss();toast('❌ 再想想，看解答回推線索');}
+ document.getElementById(tag+'s'+i).classList.add('show');}
+
+/* ---------- TAB1 vocabulary ---------- */
+const VOCAB={
+ noun:{n:'名詞',items:[
+  {w:'background',z:'（事件的）背景',s:'The teacher gave us some ____ on the war before we watched the historical film.'},
+  {w:'manners',z:'風俗；習慣（複數）',s:'Visitors should learn the local ____ before they travel to a foreign country.'},
+  {w:'consideration',z:'體貼；關心',s:'The loud music Tracey played at night showed she had little ____ for her neighbors.'},
+  {w:'laundry',z:'待洗的衣服',s:'Carla sorted the ____ by color before she put it in the washing machine.'},
+  {w:'bubble',z:'泡；水泡；氣泡',s:'Ryan mixed dish soap with water to make ____s for his children to play with.'},
+  {w:'fortune',z:'運氣',s:'I had the good ____ to get the last ticket for the show! Hundreds of fans went home with nothing.'},
+  {w:'character',z:'（某地區的人整體的）性格',s:'The friendly ____ of this country’s people makes visitors want to come back.'},
+  {w:'kimchi',z:'韓式泡菜；辛奇',s:'Many South Korean families have a special refrigerator just for ____.'},
+  {w:'fermentation',z:'發酵',s:'A kimchi fridge keeps the temperature low, which slows ____.'},
+  {w:'setting',z:'場合；環境',s:'In many social ____s, people usually avoid pouring their own drinks.'},
+  {w:'detergent',z:'洗潔精；清潔劑',s:'Guests may also bring toilet paper or laundry ____ as housewarming gifts.'},
+  {w:'housewarming',z:'喬遷派對',s:'Guests may also bring toilet paper or laundry detergent as ____ gifts.'}]},
+ adj:{n:'形容詞副詞',items:[
+  {w:'urban',z:'城市的',s:'Jason likes living in an ____ environment because there are always many exciting things to see and do.'},
+  {w:'tricky',z:'困難的；棘手的',s:'Parking on this narrow street is ____, so Jack always drives slowly.'},
+  {w:'entire',z:'全部的；整個的',s:'Johnny slept through almost the ____ flight. He only woke up once before we landed.'},
+  {w:'charming',z:'迷人的；有魅力的',s:'Ivy’s ____ personality makes everyone around her feel comfortable and relaxed.'},
+  {w:'internationally',z:'在國際上',s:'South Korea is ____ known for K-pop, dramas, and busy urban life.'},
+  {w:'filling',z:'有飽足感的',s:'It is ____ and easy to get delivered, so it has become a popular first meal in a new home.'},
+  {w:'smoothly',z:'順暢地',s:'Toilet paper usually unrolls ____, so it suggests that life will go well.'},
+  {w:'meaningful',z:'有意義的',s:'This tradition has a warm and ____ background.'}]},
+ verb:{n:'動詞',items:[
+  {w:'honor',z:'向…表示敬意',s:'We held a special dinner party to ____ our teacher for everything she had done for us.'},
+  {w:'ferment',z:'發酵',s:'Because kimchi continues to ____ over time, storing it properly can be tricky.'},
+  {w:'involve',z:'包含；牽涉',s:'In South Korea, the first day in a new home often ____s special traditions.'},
+  {w:'disturb',z:'干擾；打擾',s:'This way, students are not ____ed by the noise.'},
+  {w:'recover',z:'恢復',s:'Mothers often eat seaweed soup after they give birth to help their bodies ____.'},
+  {w:'avoid',z:'避免',s:'In many social settings, people usually ____ pouring their own drinks.'},
+  {w:'suggests',z:'意味著；暗指（三單）',s:'Toilet paper usually unrolls smoothly, so it ____ that life will go well.'},
+  {w:'pause',z:'暫停',s:'Some airlines even ____ takeoffs and landings during the English listening test.'},
+  {w:'unpacked',z:'拆開（行李、箱子）（過去分詞）',s:'After boxes are ____, many families order jajangmyeon for everyone who helped them move.'}]},
+ coll:{n:'慣用搭配詞',items:[
+  {w:'beV known for',z:'〔形容詞＋介系詞 adj. + prep.〕以…（特色）為人所知，for 後接名詞或動名詞',s:'The writer ____ her mystery novels, which usually end with an unexpected discovery.'},
+  {w:'full of',z:'〔形容詞＋介系詞 adj. + prep.〕充滿…，of 後接名詞；前面可省略 beV 作後位修飾',s:'Tim’s apartment is ____ natural light, so he never turns on the lamps during the day.'},
+  {w:'over time',z:'〔副詞片語 adv. phr.〕隨著時間過去，置句首加逗號或置句尾，修飾整個變化過程',s:'____, the small quiet town became a busy city.'},
+  {w:'give birth to',z:'〔動詞片語 v. phr.〕生（孩子），to 後接人或動物；不加受詞時寫 give birth',s:'Before rabbits ____, they make a soft nest where their babies will stay warm and safe.'},
+  {w:'one another',z:'〔相互代名詞 pron.〕彼此；互相，置動詞或介系詞之後當受詞；所有格為 one another’s',s:'The team members supported ____ whenever someone fell behind on the project.'},
+  {w:'stand for sth',z:'〔及物動詞片語 vt. phr.〕代表…；象徵…，for 後接名詞，不可分離',s:'The red light on the traffic signal ____ "stop," while the green light means "go."'},
+  {w:'come together',z:'〔不及物動詞片語 vi. phr.〕團結一心；齊心協力，後不直接加受詞',s:'Environmental groups from five different cities ____ to protect the forest from further development.'},
+  {w:'consideration for',z:'〔名詞＋介系詞 n. + prep.〕對…的體貼，for 後接人；常搭配 show／have',s:'The loud music showed she had little ____ her neighbors.'},
+  {w:'This way',z:'〔副詞片語 adv. phr.〕如此一來，置句首加逗號，用來導出前述做法的結果',s:'____, students are not disturbed by the noise.'},
+  {w:'turn A into B',z:'〔動詞片語 v. phr.〕把 A 變成 B，into 後接轉變後的結果',s:'This small action helps people show respect and ____ drinking ____ a shared act of consideration.'},
+  {w:'avoid V-ing',z:'〔動詞＋動名詞 v. + V-ing〕避免（做）…，avoid 後只能接動名詞，不可接不定詞',s:'In many social settings, people usually ____ their own drinks.'},
+  {w:'run late',z:'〔不及物動詞片語 vi. phr.〕遲到；進度落後，late 為形容詞作補語',s:'The police often help those who are ____ reach test centers on time.'},
+  {w:'on time',z:'〔介系詞片語 prep. phr.〕準時，強調按表定時間；與 in time（來得及）不同義',s:'The police help those who are running late reach test centers ____.'},
+  {w:'a closer look at',z:'〔名詞片語 n. phr.〕更仔細地看…，at 後接名詞；常搭配 take／have',s:'Today we take ____ South Korea’s surprising customs.'}]},
+ pat:{n:'重要句型',items:[
+  {w:'which slows fermentation',z:'〔句型 …, which + V〕非限定用法的 which 代表前面整件事；前須加逗號，不可用 that 代替',s:'A kimchi fridge keeps the temperature low, ____ and helps the flavor develop just right.'},
+  {w:'which can stand for growing wealth',z:'〔句型 …, which + 助動詞 + V〕which 代表前面整件事，動詞視為單數',s:'Laundry detergent makes a lot of bubbles that keep rising, ____ and good fortune.'},
+  {w:'which is valued at more than US$5,000',z:'〔句型 N, which + beV …, + V〕which 補充說明單一且獨一無二的名詞，子句前後都要逗號',s:'The painting, ____, was stolen from the museum last night.'},
+  {w:'keeps the temperature low',z:'〔句型 keep + O + adj.〕使…保持某種狀態；補語用形容詞，不可用副詞',s:'A kimchi fridge ____, which slows fermentation.'},
+  {w:'turns drinking into a shared act',z:'〔句型 turn + O + into + N〕把…變成…；into 後接轉變後的結果',s:'This small action ____ of consideration.'},
+  {w:'Isn’t it charming how…?',z:'〔句型 Isn’t it + adj. + how …?〕修辭性問句，形式否定但語意肯定，用來邀請讀者同意',s:'____ a country’s true character often hides in its smallest habits?'},
+  {w:'another side that most people never see',z:'〔句型 N + that + S + V〕關係子句修飾前方名詞；that 在子句中當受詞可省略',s:'Yet there is ____.'},
+  {w:'those who are running late',z:'〔句型 those who + V〕那些…的人；who 引導的關係子句，動詞隨 those 用複數',s:'The police often help ____ reach test centers on time.'},
+  {w:'are not disturbed by',z:'〔句型 beV + not + p.p. + by〕被動語態的否定，by 後接動作來源',s:'This way, students ____ the noise.'},
+  {w:'easy to get delivered',z:'〔句型 adj. + to V〕易於…；get + p.p. 表被動，整組當 is 的補語',s:'It is filling and ____, so it has become a popular first meal.'}]}
+};
+let CUR=[],SELW=null;
+function buildCats(){document.getElementById('catbar').innerHTML=Object.keys(VOCAB).map(k=>
+ `<button class="btn ${k===S.cat?'tabsel':''}" onclick="setCat('${k}')">${VOCAB[k].n}</button>`).join('');}
+function setCat(k){S.cat=k;save();buildCats();buildPractice();}
+function buildPractice(){
+ const items=VOCAB[S.cat].items;CUR=shuffle(items);SELW=null;
+ document.getElementById('wbbody').innerHTML=shuffle(items).map(it=>
+  `<button class="chip" data-w="${it.w}" onclick="selW(this)">${it.w} <span class="spk" onclick="event.stopPropagation();readWord('${esc(it.w)}')">🔊</span></button>`).join('');
+ document.getElementById('qlist').innerHTML=CUR.map((it,i)=>
+  `<div class="q"><p><span class="num">${i+1}</span> <span class="zh">💬 提示用中譯：${it.z}</span></p>
+   <p>${it.s.split('____').join(`<span class="slot" id="sl${i}" onclick="putW(${i})"></span>`)}
+   <button class="spk" onclick="readWord('${esc(it.s.split('____').join(it.w))}')">🔊</button></p>
+   <div class="sol" id="vs${i}"></div></div>`).join('');}
+function selW(b){document.querySelectorAll('.chip').forEach(c=>c.classList.remove('sel'));
+ b.classList.add('sel');SELW=b;}
+function putW(i){const sl=document.getElementById('sl'+i);
+ if(sl.textContent.trim()){const w=sl.dataset.filled;
+  document.querySelectorAll('.chip').forEach(c=>{if(c.dataset.w===w)c.classList.remove('used');});
+  sl.textContent='';sl.dataset.filled='';sl.className='slot';return;}
+ if(!SELW){toast('請先在 Word Bank 點選一個詞彙');return;}
+ sl.textContent=SELW.dataset.w;sl.dataset.filled=SELW.dataset.w;
+ SELW.classList.add('used');SELW.classList.remove('sel');SELW=null;}
+function checkPractice(){let first=null;
+ CUR.forEach((it,i)=>{const sl=document.getElementById('sl'+i),sol=document.getElementById('vs'+i);
+  const ok=(sl.dataset.filled||'').toLowerCase()===it.w.toLowerCase();
+  sl.classList.remove('right','wrong');sl.classList.add(ok?'right':'wrong');
+  sol.innerHTML=`<b>正解：</b>${it.w}（${it.z}）<button class="spk" onclick="readWord('${esc(it.w)}')">🔊</button><br>
+   <b>完整句：</b>${it.s.split('____').join('<b>'+it.w+'</b>')} <button class="spk" onclick="readWord('${esc(it.s.split('____').join(it.w))}')">🔊</button>`;
+  sol.classList.add('show');
+  if(ok)award(100);else{miss();if(!first)first=sl;}});
+ if(first)first.scrollIntoView({behavior:'smooth',block:'center'});else toast('🎉 全對！');}
+
+/* ---------- TAB2 cloze ---------- */
+const DD={10:'A',13:'B',14:'E',16:'C',22:'F',23:'D'};
+const DDOPT=[['A','settings'],['B','unpacked'],['C','housewarming'],['D','disturbed'],['E','filling'],['F','takeoffs']];
+const TYPED={1:'urban',2:'Yet',3:'full of',4:'over time',5:'tricky',6:'background',7:'give birth',
+ 8:'honoring',9:'manners',11:'one another',12:'consideration',15:'laundry',17:'suggests',
+ 18:'bubbles',19:'fortune',20:'entire',21:'comes together',24:'charming',25:'character'};
+const HINT={1:'城市的',2:'然而；但是',3:'充滿…',4:'隨著時間過去',5:'困難的；棘手的',6:'（事件的）背景',
+ 7:'生孩子',8:'向…表示敬意（動名詞）',9:'風俗；習慣（複數）',11:'彼此；互相',12:'體貼；關心',
+ 15:'待洗的衣服',17:'意味著；暗指（三單）',18:'泡；氣泡（複數）',19:'運氣',20:'全部的；整個的',
+ 21:'團結一心（三單）',24:'迷人的；有魅力的',25:'（某地區的人整體的）性格'};
+const CLOZE=`<p><b>Nov. 9</b>　South Korea is internationally known for K-pop, dramas, and busy [1] life（繁忙的都市生活）. [2] there is another side that most people never see—one [3] interesting traditions hidden in everyday moments（充滿了融入日常生活的有趣傳統）.</p>
+<p>Many South Korean families have a special refrigerator just for kimchi. Because kimchi continues to ferment [4]（由於泡菜會隨著時間持續發酵）, storing it properly can be [5]（要妥善保存並不容易）. A kimchi fridge keeps the temperature low, which slows fermentation and helps the flavor develop just right.</p>
+<p>A bowl of soup can also tell a family story. On their birthdays, many South Koreans have seaweed soup. This tradition has a warm and meaningful [6]（這項傳統有一段溫馨而深具意義的背景）. South Korean mothers often eat seaweed soup after they [7] to help their bodies recover（韓國母親生產後，通常會喝海帶湯來幫助身體恢復）. When people have it on their birthday, they are also [8] their mother's love and care（也是在向母親的愛與照顧表示敬意）.</p>
+<p>South Korean [9] can also be seen when people drink together（人們一起喝酒時，也能看見韓國的風俗習慣）. In many social [10], people usually avoid pouring their own drinks. Instead, they fill [11]'s glasses（互相替對方斟滿酒杯）. This small action helps people show respect and turns drinking into a shared act of [12]（也讓喝酒成為一種彼此體貼的共同活動）.</p>
+<p><b>Nov. 10</b>　In South Korea, the first day in a new home often involves special traditions. After boxes are [13], many families order jajangmyeon for everyone who helped them move. Jajangmyeon is a noodle dish in a thick black-bean sauce. It is [14] and easy to get delivered, so it has become a popular first meal in a new home. Guests may also bring toilet paper or [15] detergent as [16] gifts. Toilet paper usually unrolls smoothly, so it [17] that life will go well. Laundry detergent makes a lot of [18] that keep rising, which can stand for growing wealth and good [19]（代表財富增加與好運到來）.</p>
+<p>On college entrance exam day, the [20] country [21] to support test-takers（韓國全國上下都會一起為考生提供支持）. Many companies open later to keep the roads clear for test-takers. The police often help those who are running late reach test centers on time. Some airlines even pause [22] and landings during the English listening test. This way, students are not [23] by the noise.</p>
+<p>Isn't it [24] how a country's true [25] often hides in its smallest habits?（一個國家真正的性格，往往藏在最細微的生活習慣中，這不是很迷人嗎？）</p>`;
+function buildCloze(){
+ let h=CLOZE;
+ for(let n=25;n>=1;n--){
+  let rep;
+  if(DD[n]){rep=`<span class="num">${n}</span><select class="dd" id="c${n}"><option value=""></option>`+
+    DDOPT.map(o=>`<option value="${o[0]}">(${o[0]}) ${o[1]}</option>`).join('')+`</select>`;}
+  else{rep=`<span class="num">${n}</span><input class="blank" id="c${n}"><span class="zh">（${HINT[n]}）</span>`;}
+  h=h.split('['+n+']').join(rep);}
+ document.getElementById('clozeText').innerHTML=h;
+ document.querySelectorAll('#clozeText input,#clozeText select').forEach(el=>{
+  if(S.text[el.id])el.value=S.text[el.id];
+  el.addEventListener('change',()=>{S.text[el.id]=el.value;save();});});}
+function norm(s){return (s||'').toLowerCase().replace(/[’]/g,"'").replace(/\s+/g,' ').trim();}
+function checkCloze(){let first=null,got=0;
+ for(let n=1;n<=25;n++){const el=document.getElementById('c'+n);
+  const ans=DD[n]?DD[n]:TYPED[n];const ok=DD[n]?el.value===ans:norm(el.value)===norm(ans);
+  el.classList.remove('right','wrong');el.classList.add(ok?'right':'wrong');
+  if(ok){got+=4;award(50);}else{miss();if(!first)first=el;}}
+ toast(got===100?'🎉 25 格全對，100 分！':'📝 本次得分：'+got+' / 100');
+ if(first)first.scrollIntoView({behavior:'smooth',block:'center'});}
+
+/* ---------- TAB3 ---------- */
+const GENRE=[
+ {s:'本課〈A Closer Look at South Korea’s Surprising Customs〉最適合歸入哪一種文體？',o:['議論文','說明文','敘述文','描述文'],a:1,
+  e:'全篇現在式陳述長期為真的風俗，並逐項解釋成因或象徵意義，目的在介紹與說明。<br><b>為何其他錯：</b>議論文須有被辯護的主張；敘述文須有角色與事件時序；描述文以感官畫面為主體，本文的細節都服務於習俗說明。'},
+ {s:'Nov. 9 第一段的 Yet 在結構上的作用是？',o:['補充第二個例子','推翻既有印象，帶出「另一面」這個全段主張','說明原因','總結全文'],a:1,
+  e:'作者先承認 K-pop、戲劇與都市生活的國際印象，再用 Yet 轉出 another side that most people never see——這是說明文「先立後破」的常見開場。<br><b>為何其他錯：</b>它沒有舉例、沒有給原因，也不是收尾句。'},
+ {s:'Nov. 10 末句「Isn’t it charming how a country’s true character often hides in its smallest habits?」的功能是？',o:['提出一個真正的問題等待讀者回答','以反問句收束兩天內容，邀請讀者同意','介紹新的習俗','說明考試日期'],a:1,
+  e:'這是修辭性問句，形式否定但語意肯定，不等待回答；true character 與 smallest habits 的大小對比也回收了標題 A Closer Look。<br><b>為何其他錯：</b>(A) 它不期待答案；(C)(D) 句中沒有新資訊。'}];
+const SEQS={
+ A:{items:['破題：先承認 K-pop、戲劇與都市生活的國際印象，再用 Yet 帶出藏在日常裡的另一面',
+   '習俗一：泡菜冰箱——泡菜會持續發酵，保存不易，冰箱維持低溫可減緩發酵',
+   '習俗二：生日海帶湯——源自產後補身，吃的時候也在向母親的愛與照顧致敬',
+   '習俗三：斟酒禮儀——不替自己倒酒，而是互相斟滿，讓喝酒成為彼此體貼的活動'],ord:[0,1,2,3]},
+ B:{items:['喬遷第一天：拆完箱後訂炸醬麵，因為份量飽足又方便外送',
+   '喬遷禮的象徵：衛生紙順暢展開象徵順利，洗衣精泡泡不斷上升象徵財富與好運',
+   '大考當天：企業延後上班、警察護送遲到考生、部分航空公司在英聽時段暫停起降',
+   '收尾：以反問句點出國家性格往往藏在最細微的習慣裡'],ord:[0,1,2,3]},
+ R9:{items:['Many families have a special refrigerator just for kimchi, because a kimchi fridge keeps the temperature low, which slows fermentation.',
+   'South Korean manners can also be seen when people fill one another’s glasses to show respect.',
+   'Yet there is another side of South Korea that most people never see—one full of interesting traditions hidden in everyday moments.',
+   'On their birthdays, many South Koreans have seaweed soup to honor their mother’s love and care.'],ord:[2,0,3,1]},
+ R10:{items:['On college entrance exam day, the entire country comes together to support test-takers, and some airlines even pause takeoffs and landings.',
+   'In South Korea, the first day in a new home often involves special traditions.',
+   'Isn’t it charming how a country’s true character often hides in its smallest habits?',
+   'Many families order jajangmyeon because it is filling and easy to get delivered, and guests bring toilet paper or laundry detergent as housewarming gifts that stand for good fortune.'],ord:[1,3,0,2]}};
+const PICK={};
+function buildSeq(k){const box=document.getElementById('seq'+k);PICK[k]=[];
+ const idx=shuffle(SEQS[k].items.map((_,i)=>i));
+ box.innerHTML=idx.map(i=>`<div class="seqitem" data-i="${i}" onclick="pickSeq('${k}',this)">${SEQS[k].items[i]}</div>`).join('');}
+function pickSeq(k,el){if(el.classList.contains('picked'))return;
+ el.classList.add('picked');PICK[k].push(+el.dataset.i);
+ el.innerHTML='<b>'+(PICK[k].length)+'.</b> '+el.innerHTML;}
+function resetSeq(k){buildSeq(k);}
+function checkSeq(k){const ord=SEQS[k].ord;
+ if(PICK[k].length<ord.length){toast('請先點選全部句子');return;}
+ const ok=PICK[k].every((v,i)=>v===ord[i]);
+ if(ok){award(150);toast('✅ 順序正確！');}else{miss();toast('❌ 順序還不對，看解答回推訊號詞');}
+ document.getElementById('solSeq'+k).classList.add('show');}
+const FOUR=[
+ {s:'What is the main purpose of the whole article?',o:['To teach readers how to cook Korean food.','To show that a country’s character can be seen in its small everyday customs.','To compare South Korea with Japan.','To explain how to pass a college entrance exam.'],a:1,
+  e:'<b>層次一 主要資訊。</b>開頭用 Yet 帶出「藏在日常裡的另一面」，末句再用 true character hides in its smallest habits 收束，前後呼應。<br><b>為何其他錯：</b>(A) 文中只提食物的意義不談做法；(C) 全文沒有跨國比較；(D) 考試只是其中一個例子。'},
+ {s:'Why do many South Korean families need a special kimchi fridge?',o:['Because kimchi is too big for a normal fridge','Because kimchi continues to ferment over time, so storing it properly is tricky','Because kimchi must be frozen','Because kimchi is only eaten on birthdays'],a:1,
+  e:'<b>層次三 訊息與細節邏輯。</b>Because 直接給原因：持續發酵 → 保存不易 → 需要低溫減緩發酵，三者構成完整因果鏈。<br><b>為何其他錯：</b>(A) 文中未提體積；(C) 課文說 keeps the temperature low 而非冷凍；(D) 生日吃的是海帶湯。'},
+ {s:'Which sentence could be taken out of the third paragraph WITHOUT changing the main idea?',o:['A bowl of soup can also tell a family story.','On their birthdays, many South Koreans have seaweed soup.','South Korean mothers often eat seaweed soup after they give birth to help their bodies recover.','Parking on this narrow street is tricky.'],a:3,
+  e:'<b>層次二 次要資訊。</b>(D) 根本不在課文中，它出自字彙例句；其餘三句分別是段落主張、習俗本身與其由來，缺一不可。<br><b>解題程序：</b>刪句題先確認選項是否真的出自本段，再判斷它承擔的功能。'},
+ {s:'In "one full of interesting traditions hidden in everyday moments," what does "one" refer to?',o:['Another side of South Korea','K-pop','A kimchi fridge','A bowl of soup'],a:0,
+  e:'<b>層次四 語言結構（anaphor 代名詞回指）。</b>破折號前的 another side that most people never see 正是 one 的先行詞；one 在此代替可數名詞 side，避免重複。<br><b>為何其他錯：</b>(B) 是大家已知的那一面；(C)(D) 出現在後面的段落。'},
+ {s:'Why do South Koreans fill one another’s glasses instead of their own?',o:['Because the glasses are too small','Because it helps people show respect and turns drinking into a shared act of consideration','Because they cannot reach their own glasses','Because it is against the law to pour your own drink'],a:1,
+  e:'<b>層次三 訊息與細節邏輯。</b>Instead 標示做法的替換，後一句直接給出意義：show respect ＋ a shared act of consideration。<br><b>為何其他錯：</b>(A)(C) 文中未提杯子大小或距離；(D) 這是禮俗不是法律。'},
+ {s:'"Laundry detergent makes a lot of bubbles that keep rising, which can stand for growing wealth and good fortune." What does "which" refer to?',o:['The laundry detergent only','The fact that the bubbles keep rising','The wealth and fortune','The guests who bring gifts'],a:1,
+  e:'<b>層次四 語言結構（非限定 which）。</b>非限定用法的 which 放在逗號後、前面是完整句子時，代表的是前面整件事——此處即「洗衣精產生不斷上升的泡泡」。<br><b>為何其他錯：</b>(A) 只指洗衣精會讓語意不完整；(C) 那是 which 子句的內容；(D) 客人不在這一句的範圍內。'},
+ {s:'What does the article suggest about exam day in South Korea?',o:['Only students’ families care about the exam.','People in many different jobs change their routines to help test-takers.','The exam is held at night to avoid noise.','All flights are canceled for the whole day.'],a:1,
+  e:'<b>層次二 次要資訊。</b>企業延後上班、警察護送、航空公司暫停起降——三個不同領域的配合共同支撐 the entire country comes together 這個主張。<br><b>為何其他錯：</b>(A) 正好相反；(C) 文中未提考試時間；(D) 課文說 Some airlines… pause takeoffs and landings during the English listening test，範圍與時段都被限定。'}];
+const GSAT=[
+ {s:'【克漏字】A kimchi fridge keeps the temperature low, ____ slows fermentation.',o:['that','which','what','who'],a:1,
+  e:'非限定形容詞子句用來補充說明前面整件事，須用 which，且前方要有逗號。<br><b>為何其他錯：</b>(A) that 不能引導非限定用法；(C) what 不當關係代名詞用於此；(D) who 的先行詞須為人。'},
+ {s:'【克漏字】In many social settings, people usually avoid ____ their own drinks.',o:['to pour','pouring','pour','poured'],a:1,
+  e:'avoid 後只能接動名詞，不可接不定詞。<br><b>為何其他錯：</b>(A) avoid 不接 to V；(C)(D) 介於動詞後需名詞性成分，原形與過去式皆不可。'},
+ {s:'【克漏字】We should listen to ____ and respect different ideas.',o:['one another','another one','the other','other'],a:0,
+  e:'one another 為相互代名詞，表「彼此；互相」，置介系詞 to 之後當受詞。<br><b>為何其他錯：</b>(B) another one 指「另一個」；(C) the other 指兩者中的另一個；(D) other 為形容詞，後須接名詞。'},
+ {s:'【閱讀測驗】What is the main idea of the article?',o:['South Korea’s small daily customs reveal its true character.','South Korea is only famous for K-pop and dramas.','Kimchi is the most important food in Asia.','College entrance exams are too difficult in South Korea.'],a:0,
+  e:'首段用 Yet 帶出「另一面」，末句用 true character hides in its smallest habits 收束，兩者共同構成主旨。<br><b>為何其他錯：</b>(B) 第一段就用 Yet 推翻這個單一印象；(C) 文中未做跨國比較；(D) 課文談的是全國支援而非難度。'},
+ {s:'【閱讀測驗】Which of the following is NOT true?',o:['Seaweed soup is linked to mothers giving birth.','Toilet paper is a housewarming gift because it unrolls smoothly.','All airlines stop flying for the entire exam day.','Jajangmyeon is filling and easy to get delivered.'],a:2,
+  e:'課文說 Some airlines even pause takeoffs and landings during the English listening test——是「部分航空公司」且只在「英聽期間」。<br><b>解題程序：</b>NOT true 題逐一把選項配回原句，Some／All 與時段範圍是本課最常見的陷阱。'},
+ {s:'【閱讀測驗】What is the writer’s attitude toward these customs?',o:['Appreciative and curious','Critical and doubtful','Bored and distant','Worried and afraid'],a:0,
+  e:'A Closer Look 的標題、surprising customs 的用字，加上末句的 Isn’t it charming…?，都指向「欣賞且好奇」。<br><b>為何其他錯：</b>(B)(C)(D) 全文找不到任何批評、厭倦或憂慮的用語。'}];
+const RCQ=[
+ {s:'According to the article, what do South Koreans usually do when they drink in social settings?',
+  o:['They fill their own glasses first, and then pour for others.','They pour drinks for others before they fill their own glasses.','They try to drink as much as they can to show respect to the host.','They prefer to bring their own drinks to share with everyone at the table.'],a:1,
+  e:'課文寫 people usually avoid pouring their own drinks. Instead, they fill one another’s glasses——避免替自己倒酒，改為互相斟酒。<br><b>為何其他錯：</b>(A) 與 avoid pouring their own drinks 相反；(C) 文中沒有「多喝表示敬意」的說法；(D) 沒有自備酒水的敘述。'},
+ {s:'Why is laundry detergent a popular gift for someone who moves into a new home?',
+  o:['Its bubbles represent making more money and having good luck.','It helps the home owner clean both their clothes and their house.','It is a way to show that the guests are clean enough to enter the house.','Its fresh smell is believed to bring peace and comfort to the home owner.'],a:0,
+  e:'課文寫 makes a lot of bubbles that keep rising, which can stand for growing wealth and good fortune——不斷上升的泡泡象徵財富增加與好運。<br><b>為何其他錯：</b>(B) 是實用功能而非送禮理由；(C)(D) 文中皆無根據。'},
+ {s:'Which of the following is NOT true about South Korean customs?',
+  o:['Mothers usually eat seaweed soup to get their strength back after they have babies.','Families use a special refrigerator to make the kimchi ferment as quickly as possible.','People usually order jajangmyeon on moving day because it’s filling and convenient.','Some airlines change their flight schedules to keep the environment quiet on exam day.'],a:1,
+  e:'課文寫 A kimchi fridge keeps the temperature low, which slows fermentation——是「減緩」發酵而非「加速」。<br><b>解題程序：</b>NOT true 題特別注意 slow／quickly 這類方向相反的改寫。<br><b>為何其他錯：</b>(A) 對應 after they give birth to help their bodies recover；(C) 對應 filling and easy to get delivered；(D) 對應 pause takeoffs and landings… not disturbed by the noise。'}];
+const MIX=[
+ {s:'Why does the writer begin with K-pop, dramas, and busy urban life?',
+  o:['To prove that these are the most important parts of South Korea.','To set up the common image first, so the hidden side feels surprising.','To explain how to travel in Seoul.','To introduce the writer’s favorite drama.'],a:1,
+  e:'先立後破：承認大家熟悉的印象，再用 Yet 轉出 another side that most people never see，落差讓後面的習俗更有「冷知識」的效果。<br><b>為何其他錯：</b>(A) 它們正是要被推翻的單一印象；(C)(D) 文中沒有旅遊資訊或個人偏好。'},
+ {s:'What do the kimchi fridge, the seaweed soup, and the shared drinks have in common in this article?',
+  o:['They are all expensive.','They are all small daily things that carry a larger meaning.','They are all eaten on birthdays.','They are all housewarming gifts.'],a:1,
+  e:'三者分別處理保存、家庭情感與人際禮儀，卻都是「日常小事承載大意義」，正是末句 true character hides in its smallest habits 的具體化。<br><b>為何其他錯：</b>(A) 文中未談價格；(C) 只有海帶湯；(D) 喬遷禮是衛生紙與洗衣精。'}];
+
+/* ---------- TAB4 board ---------- */
+const BOARD=[
+ {t:'破題',q:'What is South Korea internationally known for, according to the first paragraph?',o:['Kimchi fridges and seaweed soup','K-pop, dramas, and busy urban life','College entrance exams','Housewarming gifts'],a:1,e:'先立後破：第一句給大家熟悉的國際印象，Yet 之後才轉出「藏在日常裡的另一面」。'},
+ {t:'泡菜',q:'What does a kimchi fridge do?',o:['It makes kimchi ferment faster','It keeps the temperature low, which slows fermentation','It freezes the kimchi completely','It adds flavor to the kimchi'],a:1,e:'which 引導非限定子句，補充說明「維持低溫」這件事的作用；注意是 slows 而非 speeds up。'},
+ {t:'短答',q:'短答：生日喝海帶湯的由來是什麼？（中文作答即可）',ans:'韓國母親在生產後通常會喝海帶湯幫助身體恢復，因此人們在生日喝海帶湯，也是在向母親的愛與照顧表示敬意。',e:'這一段從 A bowl of soup can also tell a family story 切入，先給由來再給意義，是「現象→成因→情感」的三層結構。'},
+ {t:'禮儀',q:'What do South Koreans usually avoid doing when drinking together?',o:['Pouring their own drinks','Talking to one another','Sitting at the same table','Drinking seaweed soup'],a:0,e:'avoid 後接動名詞 pouring；Instead 再給替代做法——互相斟酒，讓喝酒成為彼此體貼的共同活動。'},
+ {t:'喬遷',q:'Why do many families order jajangmyeon on moving day?',o:['Because it is the cheapest food','Because it is filling and easy to get delivered','Because it must be eaten with chopsticks','Because it is a traditional birthday food'],a:1,e:'so 是因果訊號：飽足＋方便外送 → 成為新家的第一餐；生日吃的是海帶湯不是炸醬麵。'},
+ {t:'短答',q:'短答：衛生紙與洗衣精各象徵什麼？（中文作答即可）',ans:'衛生紙會順暢地展開，象徵日子順順利利；洗衣精會產生不斷上升的泡泡，象徵財富增加與好運到來。',e:'兩者都用「物品特性 → 象徵意義」的推論方式：unrolls smoothly → life will go well；bubbles keep rising → growing wealth and good fortune。'},
+ {t:'大考',q:'How do companies help test-takers on exam day?',o:['They give students free food','They open later to keep the roads clear','They close for the whole week','They drive students to the test centers'],a:1,e:'企業延後上班是為了讓道路淨空；開車護送遲到考生的是警察，三個層面分工不同。'},
+ {t:'大考',q:'What do some airlines do during the English listening test?',o:['They play English songs','They pause takeoffs and landings','They cancel all flights for a week','They lower ticket prices'],a:1,e:'even 標示「連這都做」的意外程度；This way 再導出結果——學生不會被噪音干擾。'},
+ {t:'句型',q:'Which sentence uses the non-restrictive "which" correctly?',o:['A kimchi fridge keeps the temperature low that slows fermentation.','A kimchi fridge keeps the temperature low, which slows fermentation.','A kimchi fridge keeps the temperature low which slows fermentation.','A kimchi fridge keeps the temperature low, that slows fermentation.'],a:1,e:'非限定用法須在 which 前加逗號，且不可用 that 代替、不可省略。'},
+ {t:'短答',q:'短答：課文用哪一句反問收尾？它想表達什麼？（可用英文或中文作答）',ans:'Isn’t it charming how a country’s true character often hides in its smallest habits?——以修辭性問句邀請讀者同意：一個國家真正的性格，往往藏在最細微的生活習慣裡。',e:'形式否定、語意肯定的反問句；true character 與 smallest habits 的大小對比正好回收標題 A Closer Look。'},
+ {t:'片語',q:'What does "stand for" mean in "bubbles… can stand for growing wealth"?',o:['to stand up straight','to represent or symbolize','to wait in line','to defend someone'],a:1,e:'stand for sth 表「代表；象徵」，for 後接名詞，不可分離；與 stand up（站起來）意思完全不同。'},
+ {t:'摘要',q:'Which sentence works best as the LAST sentence of a summary of the whole article?',o:['Kimchi continues to ferment over time.','A country’s true character often hides in its smallest habits.','Jajangmyeon is a noodle dish in a thick black-bean sauce.','Carla sorted the laundry by color.'],a:1,e:'結論句須把兩天的所有例子拉高成通則；其餘兩句是細節，最後一句出自字彙例句而非課文。'}];
+let POS=-1;
+function drawBoard(){document.getElementById('boardGrid').innerHTML=BOARD.map((b,i)=>
+ `<div class="sq ${i===POS?'here':''} ${S.done['b'+i]?'done':''}">${i+1}<br>${b.t}</div>`).join('');}
+function roll(){const d=1+Math.floor(Math.random()*4);
+ POS=(POS+d)%BOARD.length;
+ document.getElementById('diceMsg').textContent=`🎲 擲出 ${d} 點，前進到第 ${POS+1} 格（${BOARD[POS].t}）`;
+ drawBoard();showBQ();}
+function resetBoard(){POS=-1;S.done={};save();drawBoard();
+ document.getElementById('boardQ').innerHTML='';document.getElementById('diceMsg').textContent='';}
+function showBQ(){const b=BOARD[POS],h=document.getElementById('boardQ');
+ if(b.o){h.innerHTML=`<div class="q" id="bq"><p class="stem">第 ${POS+1} 格｜${b.q}
+   <button class="spk" onclick="readWord('${esc(b.q)}')">🔊</button></p>
+   ${b.o.map((o,j)=>`<button class="opt" onclick="bAns(${j})">(${'ABCD'[j]}) ${o}</button>`).join('')}
+   <button class="btn" onclick="toggleSol('bsol')">📖 參考解答：</button>
+   <div class="sol" id="bsol"><b>正解：(${'ABCD'[b.a]})</b> ${b.o[b.a]}<br>${b.e}</div></div>`;}
+ else{h.innerHTML=`<div class="q" id="bq"><p class="stem">第 ${POS+1} 格｜${b.q}</p>
+   <textarea rows="2" id="bshort"></textarea>
+   <button class="btn" onclick="toggleSol('bsol')">📖 參考解答：</button>
+   <div class="sol" id="bsol"><b>參考答案：</b>${b.ans}<br>${b.e}</div></div>`;}}
+function bAns(j){const b=BOARD[POS],box=document.getElementById('bq');
+ if(box.dataset.done)return;box.dataset.done=1;
+ const btns=box.querySelectorAll('.opt');btns.forEach((x,k)=>{if(k===b.a)x.classList.add('right');});
+ if(j===b.a){btns[j].classList.add('right');award(120);S.done['b'+POS]=1;save();toast('✅ 答對，保留這一格！');}
+ else{btns[j].classList.add('wrong');miss();toast('❌ 這一格先留著，下次再攻');}
+ drawBoard();document.getElementById('bsol').classList.add('show');}
+
+/* ---------- TAB6 lists ---------- */
+const VOC9=[['urban','城市的','Jason likes living in an urban environment because there are always many exciting things to see and do.'],
+ ['tricky','困難的；棘手的','Parking on this narrow street is tricky, so Jack always drives slowly.'],
+ ['background','（事件的）背景','The teacher gave us some background on the war before we watched the historical film.'],
+ ['honor','向…表示敬意','We held a special dinner party to honor our teacher for everything she had done for us.'],
+ ['manners','風俗；習慣','Visitors should learn the local manners before they travel to a foreign country.'],
+ ['consideration','體貼；關心','The loud music Tracey played at night showed she had little consideration for her neighbors.']];
+const PK9=[['kimchi','韓式泡菜；辛奇','Many South Korean families have a special refrigerator just for kimchi.'],
+ ['ferment','發酵','Because kimchi continues to ferment over time, storing it properly can be tricky.'],
+ ['fermentation','發酵','A kimchi fridge keeps the temperature low, which slows fermentation.'],
+ ['setting','場合；環境','In many social settings, people usually avoid pouring their own drinks.']];
+const VOC10=[['laundry','待洗的衣服','Carla sorted the laundry by color before she put it in the washing machine.'],
+ ['bubble','泡；水泡；氣泡','Ryan mixed dish soap with water to make bubbles for his children to play with.'],
+ ['fortune','運氣','I had the good fortune to get the last ticket for the show! Hundreds of fans went home with nothing.'],
+ ['entire','全部的；整個的','Johnny slept through almost the entire flight. He only woke up once before we landed.'],
+ ['charming','迷人的；有魅力的','Ivy’s charming personality makes everyone around her feel comfortable and relaxed.'],
+ ['character','（某地區的人整體的）性格','The friendly character of this country’s people makes visitors want to come back.']];
+const PK10=[['involve','包含；牽涉','In South Korea, the first day in a new home often involves special traditions.'],
+ ['detergent','洗潔精；清潔劑','Guests may also bring toilet paper or laundry detergent as housewarming gifts.'],
+ ['housewarming','喬遷派對','Guests may also bring toilet paper or laundry detergent as housewarming gifts.'],
+ ['disturb','干擾；打擾','This way, students are not disturbed by the noise.']];
+const POCKET=[['beV known for (V-ing) sth','以…（特色）為人所知','The writer is known for her mystery novels, which usually end with an unexpected discovery.'],
+ ['(beV) full of sth','充滿…','Tim’s apartment is full of natural light, so he never turns on the lamps during the day.'],
+ ['over time','隨著時間過去','Over time, the small quiet town became a busy city.'],
+ ['give birth (to sb/sth)','生孩子','Before rabbits give birth, they make a soft nest where their babies will stay warm and safe.'],
+ ['one another','彼此；互相','The team members supported one another whenever someone fell behind on the project.'],
+ ['stand for sth','代表…','The red light on the traffic signal stands for "stop," while the green light means "go."'],
+ ['come together','團結一心；齊心協力','Environmental groups from five different cities came together to protect the forest from further development.']];
+function buildList(id,list){document.getElementById(id).innerHTML=list.map(x=>
+ `<p><b>${x[0]}</b> <button class="spk" onclick="readWord('${esc(x[0])}')">🔊</button> <span class="zh">${x[1]}</span><br>
+  ${x[2]} <button class="spk" onclick="readWord('${esc(x[2])}')">🔊</button></p>`).join('');}
+const LIFE=[
+ {s:'You are invited to a Korean friend’s new apartment. Which gift fits the custom in the article?',
+  o:['A bottle of wine','Toilet paper or laundry detergent','A kimchi fridge','A bowl of seaweed soup'],a:1,
+  e:'課文明寫 Guests may also bring toilet paper or laundry detergent as housewarming gifts，兩者分別象徵「順順利利」與「財富好運」。<br><b>為何其他錯：</b>(A) 文中未提；(C) 冰箱是家庭自備的大型家電；(D) 海帶湯是生日食物。'},
+ {s:'At a dinner with Korean colleagues, your glass is empty. What is the polite thing to do?',
+  o:['Pour your own drink quickly','Wait and fill someone else’s glass first','Leave the table','Drink from someone else’s glass'],a:1,
+  e:'課文說 people usually avoid pouring their own drinks. Instead, they fill one another’s glasses——替別人斟酒才是表達尊重與體貼的方式。<br><b>為何其他錯：</b>(A) 正是課文說要避免的；(C)(D) 文中皆無此禮俗。'},
+ {s:'Your Korean friend’s birthday is tomorrow. What food would fit the custom in the article?',
+  o:['Jajangmyeon','Seaweed soup','Kimchi only','Toilet paper'],a:1,
+  e:'課文說 On their birthdays, many South Koreans have seaweed soup，而且這個習俗同時在向母親的愛與照顧致敬。<br><b>為何其他錯：</b>(A) 是搬家第一餐；(C) 泡菜是日常配菜；(D) 是喬遷禮不是食物。'}];
+const FOCUS=[
+ {s:'Choose the correct one: I had to work late yesterday, ____ caused me to miss the movie.',o:['that','which','what','it'],a:1,
+  e:'非限定用法的關係代名詞代表前面整件事，須用 which 且前方加逗號。<br><b>為何其他錯：</b>(A) that 不能引導非限定用法；(C) what 不作關係代名詞用於此；(D) it 不是連接詞，會造成兩個主要子句相連。'},
+ {s:'Which sentence punctuates the non-restrictive clause correctly?',o:['The painting which is valued at more than US$5,000 was stolen.','The painting, which is valued at more than US$5,000 was stolen.','The painting, which is valued at more than US$5,000, was stolen.','The painting which is valued at more than US$5,000, was stolen.'],a:2,
+  e:'非限定子句插在句中時，前後都要有逗號把它與主要子句隔開。<br><b>為何其他錯：</b>(A) 完全沒有逗號；(B)(D) 只有一半的逗號，子句沒有被完整夾住。'},
+ {s:'In "Laundry detergent makes a lot of bubbles that keep rising, which can stand for growing wealth," what does "which" refer to?',o:['The laundry detergent','The bubbles only','The whole idea that the detergent makes rising bubbles','The wealth'],a:2,
+  e:'which 前面是一個完整句子，因此它代表的是「洗衣精會產生不斷上升的泡泡」這整件事。<br><b>為何其他錯：</b>(A)(B) 只取其中一部分會讓象徵的邏輯不完整；(D) 那是 which 子句的內容而非先行詞。'},
+ {s:'Which sentence correctly combines "Many companies open later on exam day" and "This keeps the roads clear"?',o:['Many companies open later on exam day, which keeps the roads clear.','Many companies open later on exam day which keeps the roads clear.','Many companies open later on exam day, that keeps the roads clear.','Many companies open later on exam day, which keep the roads clear.'],a:0,
+  e:'This 指前面整件事，故換成 which 並加逗號；which 代表整件事時視為單數，動詞用 keeps。<br><b>為何其他錯：</b>(B) 缺逗號；(C) 不可用 that；(D) 動詞未用單數。'},
+ {s:'Which先行詞 type is used in "A kimchi fridge keeps the temperature low, which slows fermentation"?',o:['先行詞是單一名詞（獨一無二）','先行詞是前面一整件事','先行詞是人','沒有先行詞'],a:1,
+  e:'which 前面是完整句子 A kimchi fridge keeps the temperature low，所以屬於第一類用法——代表一整件事。<br><b>為何其他錯：</b>(A) 第二類的例子是 The painting, which…；(C) 指人要用 who；(D) 非限定子句必有先行詞。'}];
+
+/* ---------- init ---------- */
+buildCats();buildPractice();buildCloze();
+mc(document.getElementById('genreQs'),GENRE,'g');
+mc(document.getElementById('fourQs'),FOUR,'f');
+mc(document.getElementById('gsatQs'),GSAT,'s');
+mc(document.getElementById('rcqQs'),RCQ,'r');
+mc(document.getElementById('mixQs'),MIX,'x');
+mc(document.getElementById('lifeQs'),LIFE,'l');
+mc(document.getElementById('focusQs'),FOCUS,'p');
+['A','B','R9','R10'].forEach(buildSeq);
+buildList('voc9',VOC9);buildList('pk9',PK9);buildList('voc10',VOC10);
+buildList('pk10',PK10);buildList('pocketP',POCKET);
+drawBoard();paint();
+document.querySelectorAll('textarea,input.blank').forEach(t=>{
+ if(!t.id)return;
+ if(S.text[t.id])t.value=S.text[t.id];
+ t.addEventListener('input',()=>{S.text[t.id]=t.value;save();});});
+</script>
+</body>
+</html>
